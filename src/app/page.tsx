@@ -1,5 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [openFAQs, setOpenFAQs] = useState([false, false, false, false, false]);
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQs((prev) => {
+      const newState = [...prev];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
     <>
       <script
@@ -139,9 +153,12 @@ export default function Home() {
               </div>
 
               {/* CTA Button */}
-              <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+              <a
+                href="/contact"
+                className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+              >
                 Get Started
-              </button>
+              </a>
 
               {/* Mobile Menu Button */}
               <button className="md:hidden text-white p-2">
@@ -177,7 +194,7 @@ export default function Home() {
                 <div className="mb-8"></div>
 
                 {/* Main Headline */}
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
                   Your AI Receptionist —{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fcc142] to-[#777cb8]">
                     Always On, Always Ready
@@ -185,7 +202,7 @@ export default function Home() {
                 </h1>
 
                 {/* Subheadline */}
-                <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-2xl">
+                <p className="text-sm md:text-base text-gray-300 mb-12 leading-relaxed max-w-2xl">
                   Never miss a client again. Automera&apos;s AI Receptionist
                   answers calls, books appointments, and delivers a professional
                   first impression — 24/7.
@@ -193,7 +210,10 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105 flex items-center justify-center">
+                  <a
+                    href="/contact"
+                    className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105 flex items-center justify-center"
+                  >
                     Book a Free Consultation
                     <svg
                       className="w-5 h-5 ml-2"
@@ -208,10 +228,13 @@ export default function Home() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                  </button>
-                  <button className="border-2 border-[#777cb8] hover:bg-[#777cb8] hover:text-white text-[#777cb8] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105">
+                  </a>
+                  <a
+                    href="/contact"
+                    className="border-2 border-[#777cb8] hover:bg-[#777cb8] hover:text-white text-[#777cb8] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 inline-block"
+                  >
                     Learn More
-                  </button>
+                  </a>
                 </div>
 
                 {/* Status Indicators */}
@@ -891,56 +914,183 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              <details className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300">
-                <summary className="p-6 cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors">
-                  &ldquo;I don&apos;t trust AI to talk to customers.&rdquo;
-                </summary>
-                <div className="px-6 pb-6 text-gray-300">
-                  It&apos;s custom-trained to sound like you. Most callers
-                  can&apos;t tell it&apos;s AI. You control exactly what it says
-                  and how it responds.
+              {/* FAQ Item 1 */}
+              <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300 overflow-hidden">
+                <button
+                  className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
+                  onClick={() => toggleFAQ(0)}
+                >
+                  <span>
+                    &ldquo;I don&apos;t trust AI to talk to customers.&rdquo;
+                  </span>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-300 ${
+                      openFAQs[0] ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
+                    openFAQs[0] ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-gray-300">
+                    It&apos;s custom-trained to sound like you. Most callers
+                    can&apos;t tell it&apos;s AI. You control exactly what it
+                    says and how it responds.
+                  </div>
                 </div>
-              </details>
+              </div>
 
-              <details className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300">
-                <summary className="p-6 cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors">
-                  &ldquo;What if it gives wrong info?&rdquo;
-                </summary>
-                <div className="px-6 pb-6 text-gray-300">
-                  It only uses the info you provide. If unsure, it transfers to
-                  a human or records a message. No guessing, no mistakes.
+              {/* FAQ Item 2 */}
+              <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300 overflow-hidden">
+                <button
+                  className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
+                  onClick={() => toggleFAQ(1)}
+                >
+                  <span>&ldquo;What if it gives wrong info?&rdquo;</span>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-300 ${
+                      openFAQs[1] ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
+                    openFAQs[1] ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-gray-300">
+                    It only uses the info you provide. If unsure, it transfers
+                    to a human or records a message. No guessing, no mistakes.
+                  </div>
                 </div>
-              </details>
+              </div>
 
-              <details className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300">
-                <summary className="p-6 cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors">
-                  &ldquo;Do customers prefer humans?&rdquo;
-                </summary>
-                <div className="px-6 pb-6 text-gray-300">
-                  Most want fast service. If they need a human touch, the AI
-                  transfers instantly. Best of both worlds.
+              {/* FAQ Item 3 */}
+              <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300 overflow-hidden">
+                <button
+                  className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
+                  onClick={() => toggleFAQ(2)}
+                >
+                  <span>&ldquo;Do customers prefer humans?&rdquo;</span>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-300 ${
+                      openFAQs[2] ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
+                    openFAQs[2] ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-gray-300">
+                    Most want fast service. If they need a human touch, the AI
+                    transfers instantly. Best of both worlds.
+                  </div>
                 </div>
-              </details>
+              </div>
 
-              <details className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300">
-                <summary className="p-6 cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors">
-                  &ldquo;Is it secure?&rdquo;
-                </summary>
-                <div className="px-6 pb-6 text-gray-300">
-                  Yes, fully encrypted and GDPR/local compliant. Your data and
-                  customer information are completely protected.
+              {/* FAQ Item 4 */}
+              <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300 overflow-hidden">
+                <button
+                  className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
+                  onClick={() => toggleFAQ(3)}
+                >
+                  <span>&ldquo;Is it secure?&rdquo;</span>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-300 ${
+                      openFAQs[3] ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
+                    openFAQs[3] ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-gray-300">
+                    Yes, fully encrypted and GDPR/local compliant. Your data and
+                    customer information are completely protected.
+                  </div>
                 </div>
-              </details>
+              </div>
 
-              <details className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300">
-                <summary className="p-6 cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors">
-                  &ldquo;How fast is setup?&rdquo;
-                </summary>
-                <div className="px-6 pb-6 text-gray-300">
-                  Just 2–5 days — you give us info, we handle the rest. No
-                  technical setup required on your end.
+              {/* FAQ Item 5 */}
+              <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-[#fcc142]/30 transition-all duration-300 overflow-hidden">
+                <button
+                  className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
+                  onClick={() => toggleFAQ(4)}
+                >
+                  <span>&ldquo;How fast is setup?&rdquo;</span>
+                  <svg
+                    className={`w-5 h-5 transform transition-transform duration-300 ${
+                      openFAQs[4] ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  className={`faq-answer overflow-hidden transition-all duration-500 ease-in-out ${
+                    openFAQs[4] ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-6 pb-6 text-gray-300">
+                    Just 2–5 days — you give us info, we handle the rest. No
+                    technical setup required on your end.
+                  </div>
                 </div>
-              </details>
+              </div>
             </div>
           </div>
         </section>
