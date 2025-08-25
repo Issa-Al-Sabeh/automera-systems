@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Caratteristiche",
+    "whyUs": "Perché Noi",
+    "about": "Chi Siamo",
+    "faq": "FAQ",
+    "getStarted": "Inizia Ora"
+  },
+  "hero": {
+    "title": "La Tua Receptionist AI — Sempre Attiva, Sempre Pronta",
+    "subtitle": "Non perdere mai più un cliente. La Receptionist AI di Automera risponde alle chiamate, prenota appuntamenti e offre un'impressione professionale — 24/7.",
+    "bookConsultation": "Prenota una Consulenza Gratuita",
+    "learnMore": "Scopri di Più",
+    "status": {
+      "aiActive": "AI Attiva",
+      "readyToHelp": "Pronta ad aiutare",
+      "alwaysAvailable": "Disponibile 24/7",
+      "neverOffline": "Mai offline",
+      "multiLanguage": "Multi-Lingua",
+      "globalSupport": "Supporto globale"
+    },
+    "chat": {
+      "title": "Receptionist AI",
+      "status": "Online • Pronta ad aiutare",
+      "messages": {
+        "user1": "Ciao! Vorrei prenotare un appuntamento per domani.",
+        "ai": "Perfetto! Ho disponibilità alle 14:00 o alle 16:00. Quale ti va meglio?",
+        "user2": "Le 14:00 va benissimo!"
+      },
+      "confirmation": "Appuntamento prenotato per domani alle 14:00"
+    }
+  },
+  "about": {
+    "title": "Chi è Automera Systems",
+    "description": "In Automera Systems, crediamo che nessuna azienda dovrebbe perdere clienti a causa di chiamate mancate o lunghe attese. Ecco perché abbiamo creato una potente Receptionist AI progettata per semplificare le tue operazioni, ridurre i costi ed elevare l'esperienza dei tuoi clienti."
+  },
+  "aiReceptionist": {
+    "title": "Cos'è la Receptionist AI?",
+    "description": "La tua receptionist virtuale che lavora 24 ore su 24. Prenota appuntamenti direttamente nel tuo calendario, risponde alle FAQ, cattura lead e garantisce che ogni chiamata venga risposta — anche dopo l'orario di lavoro, nei fine settimana e nei giorni festivi.",
+    "features": [
+      "Non perde mai una chiamata",
+      "Prenota appuntamenti istantaneamente",
+      "Cattura ogni lead"
+    ]
+  },
+  "features": {
+    "title": "Caratteristiche Principali",
+    "subtitle": "Tecnologia AI all'avanguardia progettata per trasformare l'esperienza dei tuoi clienti.",
+    "items": {
+      "appointmentBooking": {
+        "title": "Prenotazione Appuntamenti in Tempo Reale",
+        "description": "Si sincronizza istantaneamente con il tuo calendario."
+      },
+      "customTrained": {
+        "title": "Addestramento Personalizzato",
+        "description": "Personalizzato per i tuoi servizi, prezzi e FAQ."
+      },
+      "multiLanguage": {
+        "title": "Supporto Multi-Lingua",
+        "description": "Gestisce italiano, inglese, arabo, spagnolo e altro."
+      },
+      "ultraHumanVoices": {
+        "title": "Voci Ultra-Umane",
+        "description": "Tono, ritmo ed emozione naturali."
+      },
+      "alwaysAvailable": {
+        "title": "Sempre Disponibile",
+        "description": "Copertura 24/7, inclusi i giorni festivi."
+      },
+      "smartFailover": {
+        "title": "Failover Intelligente",
+        "description": "Passa a un umano o registra messaggi."
+      },
+      "easyIntegrations": {
+        "title": "Integrazioni Semplici",
+        "description": "Funziona con calendari, CRM e Zapier/Make."
+      },
+      "costSaving": {
+        "title": "Risparmio sui Costi",
+        "description": "Riduce i costi generali da chiamate perse e assunzioni extra."
+      }
+    }
+  },
+  "whyUs": {
+    "title": "Perché le Aziende la Amano",
+    "items": {
+      "neverMissLead": {
+        "title": "Non Perdere Mai un Lead",
+        "description": "Ogni chiamata risposta, ogni opportunità catturata."
+      },
+      "lowerCosts": {
+        "title": "Costi Inferiori",
+        "description": "Non serve un call center o personale extra."
+      },
+      "boostRevenue": {
+        "title": "Aumenta i Ricavi",
+        "description": "Più prenotazioni, più clienti, più crescita."
+      },
+      "betterExperience": {
+        "title": "Esperienza Migliore",
+        "description": "Risposte istantanee e professionali ogni volta."
+      },
+      "noTechSkills": {
+        "title": "Nessuna Competenza Tecnica Richiesta",
+        "description": "Gestiamo noi l'installazione e gli aggiornamenti."
+      }
+    }
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "items": [
+      {
+        "question": "\"Non mi fido dell'AI per parlare con i clienti.\"",
+        "answer": "È addestrata personalmente per suonare come te. La maggior parte dei chiamanti non riesce a capire che è AI. Controlli esattamente cosa dice e come risponde."
+      },
+      {
+        "question": "\"E se dà informazioni sbagliate?\"",
+        "answer": "Usa solo le informazioni che fornisci tu. Se non è sicura, passa a un umano o registra un messaggio. Nessuna supposizione, nessun errore."
+      },
+      {
+        "question": "\"I clienti preferiscono gli umani?\"",
+        "answer": "La maggior parte vuole un servizio veloce. Se hanno bisogno di un tocco umano, l'AI passa istantaneamente. Il meglio di entrambi i mondi."
+      },
+      {
+        "question": "\"È sicura?\"",
+        "answer": "Sì, completamente crittografata e conforme GDPR/locale. I tuoi dati e le informazioni dei clienti sono completamente protetti."
+      },
+      {
+        "question": "\"Quanto è veloce l'installazione?\"",
+        "answer": "Solo 2-5 giorni — ci dai le informazioni, gestiamo noi il resto. Nessuna installazione tecnica richiesta da parte tua."
+      }
+    ]
+  },
+  "availability": {
+    "title": "Disponibilità Globale",
+    "description": "Attualmente disponibile in oltre 30 paesi, inclusi Italia, USA, UK, Canada, Australia, Germania, Francia, Spagna e altri.",
+    "countries": [
+      "Germania",
+      "Italia",
+      "USA",
+      "UK",
+      "Canada",
+      "Australia",
+      "Francia",
+      "Spagna"
+    ]
+  },
+  "cta": {
+    "title": "Pronto a Aggiornare la Tua Reception?",
+    "subtitle": "Prenota una consulenza gratuita e scopri come la Receptionist AI di Automera può trasformare la tua azienda.",
+    "button": "Prenota una Consulenza Gratuita"
+  },
+  "footer": {
+    "copyright": "© 2025 Automera Systems. Tutti i diritti riservati. La Tua Soluzione Receptionist AI."
+  },
+  "contact": {
+    "title": "Prenota la Tua Consulenza Gratuita",
+    "subtitle": "Pronto a trasformare la tua azienda con l'AI? Parliamo di come Automera può aiutarti a non perdere mai più un cliente.",
+    "form": {
+      "fullName": "Nome Completo *",
+      "email": "Indirizzo Email *",
+      "company": "Nome Azienda",
+      "phone": "Numero di Telefono",
+      "businessCountry": "Paese dell'Azienda",
+      "message": "Raccontaci le tue esigenze *",
+      "submit": "Prenota Consulenza Gratuita",
+      "sending": "Invio in corso...",
+      "placeholders": {
+        "fullName": "Inserisci il tuo nome completo",
+        "email": "Inserisci la tua email",
+        "company": "Inserisci il nome dell'azienda",
+        "phone": "Inserisci il numero di telefono",
+        "message": "Descrivi le esigenze della tua azienda e come pensi che l'AI possa aiutare..."
+      }
+    },
+    "success": {
+      "title": "Grazie! La tua richiesta di consulenza è stata inviata con successo.",
+      "subtitle": "Ti risponderemo presto."
+    },
+    "error": {
+      "title": "Qualcosa è andato storto. Riprova.",
+      "subtitle": "Se il problema persiste, contattaci direttamente."
+    },
+    "agreement": "Inviando questo modulo, accetti la nostra <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Informativa sulla Privacy</a> e i <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Termini di Servizio</a>"
+  },
+  "privacy": {
+    "title": "Informativa sulla Privacy",
+    "subtitle": "La tua privacy è importante per noi. Scopri come raccogliamo, utilizziamo e proteggiamo le tue informazioni.",
+    "lastUpdated": "Ultimo Aggiornamento: Agosto 2025",
+    "sections": {
+      "collect": {
+        "title": "1. Quali Informazioni Raccogliamo",
+        "description": "Quando interagisci con il nostro sito web o invii un modulo, potremmo raccogliere le seguenti informazioni:",
+        "items": {
+          "0": "Il tuo nome",
+          "1": "Il tuo indirizzo email",
+          "2": "Il tuo numero di telefono"
+        }
+      },
+      "use": {
+        "title": "2. Come Utilizziamo le Tue Informazioni",
+        "description": "Utilizziamo le informazioni che fornisci per:",
+        "items": {
+          "0": "Prenotare e gestire consulenze",
+          "1": "Inviare aggiornamenti SMS, promemoria o risposte alle richieste",
+          "2": "Seguire via SMS o email per assistere con la programmattere o rispondere alle domande"
+        }
+      },
+      "sms": {
+        "title": "3. Messaggi SMS e Consenso",
+        "description": "Inviando le tue informazioni, acconsenti a ricevere messaggi SMS da Automera Systems relativi a conferme di appuntamenti, assistenza per la programmazione e richieste generali.",
+        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi SMS. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "share": {
+        "title": "4. Come Condividiamo le Tue Informazioni",
+        "description": "Non vendiamo né condividiamo le tue informazioni personali con terze parti per scopi di marketing.",
+        "additional": "Le tue informazioni di contatto potrebbero essere memorizzate nei nostri sistemi interni (come GoHighLevel CRM) strettamente per scopi aziendali come prenotazioni e comunicazioni. Nessuna informazione mobile sarà condivisa con terze parti/affiliati per scopi di marketing/promozionali. La condivisione di informazioni con subappaltatori in servizi di supporto, come il servizio clienti, è consentita. Tutte le categorie sopra menzionate escludono i dati di opt-in dell'origine dei messaggi di testo e il consenso; queste informazioni non saranno condivise con terze parti, escludendo aggregatori e fornitori del servizio di messaggi di testo."
+      },
+      "security": {
+        "title": "5. Sicurezza dei Dati",
+        "description": "Adottiamo misure ragionevoli per proteggere le informazioni personali che fornisci da accesso non autorizzato, divulgazione o uso improprio."
+      },
+      "rights": {
+        "title": "6. I Tuoi Diritti",
+        "description": "Se desideri:",
+        "items": {
+          "0": "Aggiornare o eliminare le tue informazioni personali",
+          "1": "Ritirare il tuo consenso",
+          "2": "Porre domande sulle nostre pratiche di privacy"
+        },
+        "contact": "Inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Torna al Modulo di Contatto"
+  },
+  "chat": {
+    "title": "Receptionist AI",
+    "status": "• Online • Pronta ad aiutare",
+    "messages": {
+      "user": {
+        "greeting": "Ciao! Vorrei prenotare un appuntamento per domani.",
+        "confirmation": "Le 14:00 va benissimo!"
+      },
+      "ai": {
+        "availability": "Perfetto! Ho disponibilità alle 14:00 o alle 16:00. Quale ti va meglio?"
+      }
+    },
+    "confirmation": "Appuntamento prenotato per domani alle 14:00",
+    "inputPlaceholder": "Scrivi il tuo messaggio...",
+    "sendButton": "Invia"
+  },
+  "terms": {
+    "title": "Termini e Condizioni",
+    "subtitle": "Leggi attentamente questi termini prima di utilizzare i nostri servizi di receptionist AI.",
+    "lastUpdated": "Ultimo Aggiornamento: Agosto 2025",
+    "sections": {
+      "acceptance": {
+        "title": "1. Accettazione dei Termini",
+        "description": "Accedendo al nostro sito web, inviando le tue informazioni o utilizzando i nostri servizi, accetti di essere vincolato da questi Termini di Servizio. Se non accetti questi termini, non utilizzare il nostro sito web o servizi."
+      },
+      "services": {
+        "title": "2. Servizi Forniti",
+        "description": "Automera Systems fornisce soluzioni di automazione alimentate da AI inclusi:",
+        "items": [
+          "Receptionist AI (risposta chiamate virtuali e prenotazione appuntamenti)",
+          "Chatbot AI (supporto clienti multicanale)",
+          "Automazioni AI Personalizzate (integrazioni CRM, automazioni dei flussi di lavoro e soluzioni aziendali su misura)"
+        ],
+        "additional": "Tutti i servizi sono soggetti a disponibilità e valutazione continua dell'idoneità del cliente."
+      },
+      "responsibilities": {
+        "title": "3. Responsabilità dell'Utente",
+        "description": "Utilizzando i nostri servizi, accetti di:",
+        "items": [
+          "Fornire informazioni accurate e veritiere quando compili i moduli",
+          "Utilizzare i nostri servizi solo per scopi legali ed etici",
+          "AstenerTi dall'abusare, spammare o tentare di sfruttare i sistemi forniti"
+        ]
+      },
+      "sms": {
+        "title": "4. Messaggi SMS e Comunicazione",
+        "description": "Inviando il tuo numero di telefono attraverso i nostri moduli o sito web, acconsenti a ricevere messaggi SMS da Automera Systems relativi a:",
+        "items": [
+          "Promemoria appuntamenti",
+          "Follow-up consulenze",
+          "Aggiornamenti servizi e richieste"
+        ],
+        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi messaggio. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "thirdParty": {
+        "title": "5. Strumenti di Terze Parti",
+        "description": "Potremmo utilizzare strumenti di terze parti come GoHighLevel CRM o piattaforme di automazione (Make.com, n8n, ecc.) per gestire la comunicazione e la fornitura dei servizi. Le tue informazioni sono memorizzate in modo sicuro e utilizzate esclusivamente per gli scopi descritti nella nostra Informativa sulla Privacy."
+      },
+      "dataProtection": {
+        "title": "6. Protezione dei Dati",
+        "description": "Ci impegniamo a proteggere i tuoi dati. Per dettagli completi su come i tuoi dati vengono raccolti, utilizzati e memorizzati, consulta la nostra <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Informativa sulla Privacy</a>."
+      },
+      "liability": {
+        "title": "7. Limitazione di Responsabilità",
+        "description": "Automera Systems non è responsabile per eventuali danni indiretti, incidentali o consequenziali derivanti dall'utilizzo dei nostri servizi. I risultati possono variare e non sono implicite garanzie a meno che non siano dichiarate in un accordo di servizio specifico."
+      },
+      "modifications": {
+        "title": "8. Modifiche",
+        "description": "Ci riserviamo il diritto di aggiornare o modificare questi termini in qualsiasi momento. Eventuali modifiche saranno pubblicate su questa pagina con una data di efficacia aggiornata."
+      },
+      "governingLaw": {
+        "title": "9. Legge Applicabile",
+        "description": "Questi termini saranno regolati e interpretati in conformità con le leggi del Libano.",
+        "contact": "Se hai domande su questi termini, contattaci a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Torna al Modulo di Contatto"
+  }
+}

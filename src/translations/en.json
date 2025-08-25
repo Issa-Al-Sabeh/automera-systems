@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "whyUs": "Why Us",
+    "about": "About",
+    "faq": "FAQ",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Your AI Receptionist — Always On, Always Ready",
+    "subtitle": "Never miss a client again. Automera's AI Receptionist answers calls, books appointments, and delivers a professional first impression — 24/7.",
+    "bookConsultation": "Book a Free Consultation",
+    "learnMore": "Learn More",
+    "status": {
+      "aiActive": "AI Active",
+      "readyToHelp": "Ready to help",
+      "alwaysAvailable": "24/7 Available",
+      "neverOffline": "Never offline",
+      "multiLanguage": "Multi-Language",
+      "globalSupport": "Global support"
+    },
+    "chat": {
+      "title": "AI Receptionist",
+      "status": "Online • Ready to help",
+      "messages": {
+        "user1": "Hi! I'd like to book an appointment for tomorrow.",
+        "ai": "Perfect! I have availability at 2 PM or 4 PM. Which works better?",
+        "user2": "2 PM sounds great!"
+      },
+      "confirmation": "Appointment booked for tomorrow at 2 PM"
+    }
+  },
+  "about": {
+    "title": "About Automera Systems",
+    "description": "At Automera Systems, we believe no business should lose clients because of missed calls or long wait times. That's why we built a powerful AI Receptionist designed to streamline your operations, reduce costs, and elevate your customer experience."
+  },
+  "aiReceptionist": {
+    "title": "What is the AI Receptionist?",
+    "description": "Your virtual receptionist that works around the clock. It books appointments directly into your calendar, answers FAQs, captures leads, and ensures every call is answered — even after hours, weekends, and holidays.",
+    "features": [
+      "Never misses a call",
+      "Books appointments instantly",
+      "Captures every lead"
+    ]
+  },
+  "features": {
+    "title": "Key Features",
+    "subtitle": "Cutting-edge AI technology designed to transform your customer experience.",
+    "items": {
+      "appointmentBooking": {
+        "title": "Real-Time Appointment Booking",
+        "description": "Instantly syncs with your calendar."
+      },
+      "customTrained": {
+        "title": "Custom Trained",
+        "description": "Tailored to your services, pricing, and FAQs."
+      },
+      "multiLanguage": {
+        "title": "Multi-Language Support",
+        "description": "Handles English, Arabic, Spanish, and more."
+      },
+      "ultraHumanVoices": {
+        "title": "Ultra-Human Voices",
+        "description": "Natural tone, pacing, and emotion."
+      },
+      "alwaysAvailable": {
+        "title": "Always Available",
+        "description": "24/7 coverage, including holidays."
+      },
+      "smartFailover": {
+        "title": "Smart Failover",
+        "description": "Escalates to a human or records messages."
+      },
+      "easyIntegrations": {
+        "title": "Easy Integrations",
+        "description": "Works with calendars, CRMs, and Zapier/Make."
+      },
+      "costSaving": {
+        "title": "Cost-Saving",
+        "description": "Cuts overhead from missed calls and extra hires."
+      }
+    }
+  },
+  "whyUs": {
+    "title": "Why Businesses Love It",
+    "items": {
+      "neverMissLead": {
+        "title": "Never Miss a Lead",
+        "description": "Every call answered, every opportunity captured."
+      },
+      "lowerCosts": {
+        "title": "Lower Costs",
+        "description": "No need for call centers or extra staff."
+      },
+      "boostRevenue": {
+        "title": "Boost Revenue",
+        "description": "More bookings, more clients, more growth."
+      },
+      "betterExperience": {
+        "title": "Better Experience",
+        "description": "Instant, professional responses every time."
+      },
+      "noTechSkills": {
+        "title": "No Tech Skills Needed",
+        "description": "We handle setup & updates for you."
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "items": [
+      {
+        "question": "\"I don't trust AI to talk to customers.\"",
+        "answer": "It's custom-trained to sound like you. Most callers can't tell it's AI. You control exactly what it says and how it responds."
+      },
+      {
+        "question": "\"What if it gives wrong info?\"",
+        "answer": "It only uses the info you provide. If unsure, it transfers to a human or records a message. No guessing, no mistakes."
+      },
+      {
+        "question": "\"Do customers prefer humans?\"",
+        "answer": "Most want fast service. If they need a human touch, the AI transfers instantly. Best of both worlds."
+      },
+      {
+        "question": "\"Is it secure?\"",
+        "answer": "Yes, fully encrypted and GDPR/local compliant. Your data and customer information are completely protected."
+      },
+      {
+        "question": "\"How fast is setup?\"",
+        "answer": "Just 2–5 days — you give us info, we handle the rest. No technical setup required on your end."
+      }
+    ]
+  },
+  "availability": {
+    "title": "Global Availability",
+    "description": "Currently available across 30+ countries, including the USA, UK, Canada, Australia, Germany, France, Italy, Spain, and more.",
+    "countries": [
+      "Germany",
+      "USA",
+      "UK",
+      "Canada",
+      "Australia",
+      "France",
+      "Italy",
+      "Spain"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Upgrade Your Reception?",
+    "subtitle": "Book a free consultation and see how Automera's AI Receptionist can transform your business.",
+    "button": "Book a Free Consultation"
+  },
+  "footer": {
+    "copyright": "© 2025 Automera Systems. All rights reserved. Your AI Receptionist Solution."
+  },
+  "contact": {
+    "title": "Book Your Free Consultation",
+    "subtitle": "Ready to transform your business with AI? Let's discuss how Automera can help you never miss a client again.",
+    "form": {
+      "fullName": "Full Name *",
+      "email": "Email Address *",
+      "company": "Company Name",
+      "phone": "Phone Number",
+      "businessCountry": "Business Country Location",
+      "message": "Tell us about your needs *",
+      "submit": "Book Free Consultation",
+      "sending": "Sending...",
+      "placeholders": {
+        "fullName": "Enter your full name",
+        "email": "Enter your email",
+        "company": "Enter company name",
+        "phone": "Enter phone number",
+        "message": "Describe your business needs and how you think AI could help..."
+      }
+    },
+    "success": {
+      "title": "Thank you! Your consultation request has been sent successfully.",
+      "subtitle": "We'll get back to you soon."
+    },
+    "error": {
+      "title": "Something went wrong. Please try again.",
+      "subtitle": "If the problem persists, please contact us directly."
+    },
+    "agreement": "By submitting this form, you agree to our <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Privacy Policy</a> and <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Terms of Service</a>"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Your privacy is important to us. Learn how we collect, use, and protect your information.",
+    "lastUpdated": "Last Updated: August 2025",
+    "sections": {
+      "collect": {
+        "title": "1. What Information We Collect",
+        "description": "When you interact with our website or submit a form, we may collect the following information:",
+        "items": {
+          "0": "Your name",
+          "1": "Your email address",
+          "2": "Your phone number"
+        }
+      },
+      "use": {
+        "title": "2. How We Use Your Information",
+        "description": "We use the information you provide to:",
+        "items": {
+          "0": "Book and manage consultations",
+          "1": "Send SMS updates, reminders, or responses to inquiries",
+          "2": "Follow up via text or email to assist with scheduling or answering questions"
+        }
+      },
+      "sms": {
+        "title": "3. Text Messaging & Consent",
+        "description": "By submitting your information, you consent to receive SMS messages from Automera Systems related to appointment confirmations, scheduling assistance, and general inquiries.",
+        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any SMS. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "share": {
+        "title": "4. How We Share Your Information",
+        "description": "We do not sell or share your personal information with any third parties for marketing purposes.",
+        "additional": "Your contact information may be stored in our internal systems (such as GoHighLevel CRM) strictly for business purposes like booking and communication. No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is allowed. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties, excluding aggregators and providers of the Text Message service."
+      },
+      "security": {
+        "title": "5. Data Security",
+        "description": "We take reasonable steps to protect the personal information you provide from unauthorized access, disclosure, or misuse."
+      },
+      "rights": {
+        "title": "6. Your Rights",
+        "description": "If you wish to:",
+        "items": {
+          "0": "Update or delete your personal information",
+          "1": "Withdraw your consent",
+          "2": "Ask questions about our privacy practices"
+        },
+        "contact": "Please email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Back to Contact Form"
+  },
+  "chat": {
+    "title": "AI Receptionist",
+    "status": "• Online • Ready to help",
+    "messages": {
+      "user": {
+        "greeting": "Hi! I'd like to book an appointment for tomorrow.",
+        "confirmation": "2 PM sounds great!"
+      },
+      "ai": {
+        "availability": "Perfect! I have availability at 2 PM or 4 PM. Which works better?"
+      }
+    },
+    "confirmation": "Appointment booked for tomorrow at 2 PM",
+    "inputPlaceholder": "Type your message...",
+    "sendButton": "Send"
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "subtitle": "Please read these terms carefully before using our AI receptionist services.",
+    "lastUpdated": "Last Updated: August 2025",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "description": "By accessing our website, submitting your information, or using our services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website or services."
+      },
+      "services": {
+        "title": "2. Services Provided",
+        "description": "Automera Systems provides AI-powered automation solutions including:",
+        "items": [
+          "AI Receptionist (virtual call answering & appointment booking)",
+          "AI Chatbot (multichannel customer support)",
+          "Custom AI Automations (CRM integrations, workflow automations, and tailored business solutions)"
+        ],
+        "additional": "All services are subject to availability and ongoing evaluation of client suitability."
+      },
+      "responsibilities": {
+        "title": "3. User Responsibilities",
+        "description": "By using our services, you agree to:",
+        "items": [
+          "Provide accurate and truthful information when filling out forms",
+          "Only use our services for lawful and ethical purposes",
+          "Refrain from abusing, spamming, or attempting to exploit the systems provided"
+        ]
+      },
+      "sms": {
+        "title": "4. SMS Messaging & Communication",
+        "description": "By submitting your phone number through our forms or website, you consent to receive SMS messages from Automera Systems related to:",
+        "items": [
+          "Appointment reminders",
+          "Consultation follow-ups",
+          "Service updates and inquiries"
+        ],
+        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any message. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "thirdParty": {
+        "title": "5. Third-Party Tools",
+        "description": "We may use third-party tools such as GoHighLevel CRM or automation platforms (Make.com, n8n, etc.) to manage communication and service delivery. Your information is stored securely and used solely for the purposes outlined in our Privacy Policy."
+      },
+      "dataProtection": {
+        "title": "6. Data Protection",
+        "description": "We are committed to protecting your data. For full details on how your data is collected, used, and stored, please refer to our <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Privacy Policy</a>."
+      },
+      "liability": {
+        "title": "7. Limitation of Liability",
+        "description": "Automera Systems is not liable for any indirect, incidental, or consequential damages resulting from the use of our services. Results may vary, and no guarantees are implied unless stated in a specific service agreement."
+      },
+      "modifications": {
+        "title": "8. Modifications",
+        "description": "We reserve the right to update or modify these terms at any time. Any changes will be posted on this page with an updated effective date."
+      },
+      "governingLaw": {
+        "title": "9. Governing Law",
+        "description": "These terms shall be governed by and interpreted in accordance with the laws of Lebanon.",
+        "contact": "If you have any questions about these terms, please contact us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Back to Contact Form"
+  }
+}

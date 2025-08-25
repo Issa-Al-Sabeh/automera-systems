@@ -3,10 +3,14 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export default function Home() {
   const [openFAQs, setOpenFAQs] = useState([false, false, false, false, false]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
+  const { t, tArray } = useLanguage();
 
   const toggleFAQ = (index: number) => {
     setOpenFAQs((prev) => {
@@ -19,6 +23,21 @@ export default function Home() {
   const handleBookConsultation = () => {
     router.push("/contact");
   };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
 
   // Handle scroll behavior when navigating from other pages
   useEffect(() => {
@@ -190,50 +209,56 @@ export default function Home() {
                 </span>
               </a>
 
-              {/* Centered Navigation Links */}
+              {/* Centered Navigation Links - Desktop Only */}
               <div className="hidden md:flex space-x-8">
                 <a
                   href="#home"
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
-                  Home
+                  {t("nav.home")}
                 </a>
                 <a
                   href="#features"
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
-                  Features
+                  {t("nav.features")}
                 </a>
                 <a
                   href="#why-us"
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
-                  Why Us
+                  {t("nav.whyUs")}
                 </a>
                 <a
                   href="#about"
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
-                  About
+                  {t("nav.about")}
                 </a>
                 <a
                   href="#faq"
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
-                  FAQ
+                  {t("nav.faq")}
                 </a>
               </div>
 
-              {/* CTA Button */}
-              <a
-                href="/contact"
-                className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
-              >
-                Get Started
-              </a>
+              {/* Right Side - Language Switcher and Get Started Button - Desktop Only */}
+              <div className="hidden md:flex items-center space-x-4">
+                <LanguageSwitcher />
+                <a
+                  href="/contact"
+                  className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+                >
+                  {t("nav.getStarted")}
+                </a>
+              </div>
 
               {/* Mobile Menu Button */}
-              <button className="md:hidden text-white p-2">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-white p-2 hover:text-[#fcc142] transition-colors"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -252,6 +277,77 @@ export default function Home() {
           </div>
         </nav>
 
+        {/* Mobile Menu Drawer */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+            <div className="mobile-menu fixed right-0 top-0 h-full w-80 bg-[#284185] shadow-2xl transform transition-transform duration-300 ease-in-out">
+              <div className="flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-white/20">
+                  <span className="text-white font-bold text-lg">Menu</span>
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-white hover:text-[#fcc142] transition-colors p-2"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
+                <div className="flex-1 p-6 space-y-4">
+                  <a
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    {t("nav.home")}
+                  </a>
+                  <a
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    href="/privacy"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/terms"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Terms and Conditions
+                  </a>
+                </div>
+
+                {/* Bottom Section */}
+                <div className="p-6 border-t border-white/20">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Hero Section */}
         <section
           id="home"
@@ -267,17 +363,12 @@ export default function Home() {
 
                 {/* Main Headline */}
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
-                  Your AI Receptionist —{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fcc142] to-[#777cb8]">
-                    Always On, Always Ready
-                  </span>
+                  {t("hero.title")}
                 </h1>
 
                 {/* Subheadline */}
                 <p className="text-sm md:text-base text-gray-300 mb-12 leading-relaxed max-w-2xl">
-                  Never miss a client again. Automera&apos;s AI Receptionist
-                  answers calls, books appointments, and delivers a professional
-                  first impression — 24/7.
+                  {t("hero.subtitle")}
                 </p>
 
                 {/* CTA Buttons */}
@@ -286,7 +377,7 @@ export default function Home() {
                     href="/contact"
                     className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105 flex items-center justify-center"
                   >
-                    Book a Free Consultation
+                    {t("hero.bookConsultation")}
                     <svg
                       className="w-5 h-5 ml-2"
                       fill="none"
@@ -305,7 +396,7 @@ export default function Home() {
                     href="#ai-receptionist"
                     className="border-2 border-[#777cb8] hover:bg-[#777cb8] hover:text-white text-[#777cb8] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 inline-block"
                   >
-                    Learn More
+                    {t("hero.learnMore")}
                   </a>
                 </div>
 
@@ -315,9 +406,11 @@ export default function Home() {
                     <div className="w-3 h-3 bg-[#fcc142] rounded-full animate-pulse shadow-lg shadow-[#fcc142]/50"></div>
                     <div>
                       <div className="text-white font-semibold text-sm">
-                        AI Active
+                        {t("hero.status.aiActive")}
                       </div>
-                      <div className="text-gray-400 text-xs">Ready to help</div>
+                      <div className="text-gray-400 text-xs">
+                        {t("hero.status.readyToHelp")}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -327,9 +420,11 @@ export default function Home() {
                     ></div>
                     <div>
                       <div className="text-white font-semibold text-sm">
-                        24/7 Available
+                        {t("hero.status.alwaysAvailable")}
                       </div>
-                      <div className="text-gray-400 text-xs">Never offline</div>
+                      <div className="text-gray-400 text-xs">
+                        {t("hero.status.neverOffline")}
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -339,10 +434,10 @@ export default function Home() {
                     ></div>
                     <div>
                       <div className="text-white font-semibold text-sm">
-                        Multi-Language
+                        {t("hero.status.multiLanguage")}
                       </div>
                       <div className="text-gray-400 text-xs">
-                        Global support
+                        {t("hero.status.globalSupport")}
                       </div>
                     </div>
                   </div>
@@ -375,11 +470,11 @@ export default function Home() {
                         </div>
                         <div>
                           <div className="text-white font-semibold">
-                            AI Receptionist
+                            {t("hero.chat.title")}
                           </div>
                           <div className="text-[#fcc142] text-sm flex items-center">
                             <div className="w-2 h-2 bg-[#fcc142] rounded-full mr-2 animate-pulse"></div>
-                            Online • Ready to help
+                            {t("hero.chat.status")}
                           </div>
                         </div>
                       </div>
@@ -389,18 +484,17 @@ export default function Home() {
                     <div className="space-y-3 overflow-hidden">
                       <div className="bg-[#fcc142]/20 rounded-2xl p-3 max-w-[75%]">
                         <div className="text-white text-xs">
-                          "Hi! I'd like to book an appointment for tomorrow."
+                          "{t("hero.chat.messages.user1")}"
                         </div>
                       </div>
                       <div className="bg-[#777cb8]/30 rounded-2xl p-3 max-w-[75%] ml-auto">
                         <div className="text-white text-xs">
-                          "Perfect! I have availability at 2 PM or 4 PM. Which
-                          works better?"
+                          "{t("hero.chat.messages.ai")}"
                         </div>
                       </div>
                       <div className="bg-[#fcc142]/20 rounded-2xl p-3 max-w-[75%]">
                         <div className="text-white text-xs">
-                          "2 PM sounds great!"
+                          "{t("hero.chat.messages.user2")}"
                         </div>
                       </div>
                       <div className="bg-[#284185]/50 rounded-2xl p-3 border border-[#fcc142]/30">
@@ -419,7 +513,7 @@ export default function Home() {
                             />
                           </svg>
                           <span className="truncate">
-                            Appointment booked for tomorrow at 2 PM
+                            {t("hero.chat.confirmation")}
                           </span>
                         </div>
                       </div>
@@ -455,13 +549,10 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
-                About <span className="text-[#fcc142]">Automera Systems</span>
+                {t("about.title")}
               </h2>
               <p className="text-xl md:text-2xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
-                At Automera Systems, we believe no business should lose clients
-                because of missed calls or long wait times. That's why we built
-                a powerful AI Receptionist designed to streamline your
-                operations, reduce costs, and elevate your customer experience.
+                {t("about.description")}
               </p>
             </div>
           </div>
@@ -476,36 +567,20 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
-                  What is the{" "}
-                  <span className="text-[#fcc142]">AI Receptionist?</span>
+                  {t("aiReceptionist.title")}
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  Your virtual receptionist that works around the clock. It
-                  books appointments directly into your calendar, answers FAQs,
-                  captures leads, and ensures every call is answered — even
-                  after hours, weekends, and holidays.
+                  {t("aiReceptionist.description")}
                 </p>
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-6 h-6 bg-[#fcc142] rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-[#284185] rounded-full"></div>
+                  {tArray("aiReceptionist.features").map((feature, index) => (
+                    <div key={index} className="flex items-center space-x-4">
+                      <div className="w-6 h-6 bg-[#fcc142] rounded-full flex items-center justify-center">
+                        <div className="w-2 h-2 bg-[#284185] rounded-full"></div>
+                      </div>
+                      <span className="text-gray-300">{feature}</span>
                     </div>
-                    <span className="text-gray-300">Never misses a call</span>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-6 h-6 bg-[#fcc142] rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-[#284185] rounded-full"></div>
-                    </div>
-                    <span className="text-gray-300">
-                      Books appointments instantly
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-6 h-6 bg-[#fcc142] rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-[#284185] rounded-full"></div>
-                    </div>
-                    <span className="text-gray-300">Captures every lead</span>
-                  </div>
+                  ))}
                 </div>
               </div>
               <div className="relative">
@@ -529,33 +604,32 @@ export default function Home() {
                       </div>
                       <div>
                         <div className="text-white font-semibold">
-                          AI Receptionist
+                          {t("hero.chat.title")}
                         </div>
                         <div className="text-[#fcc142] text-sm">
-                          Online • Ready to help
+                          {t("hero.chat.status")}
                         </div>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="bg-[#fcc142]/20 rounded-lg p-3">
                         <div className="text-white text-sm">
-                          "Hi! I'd like to book an appointment for tomorrow."
+                          "{t("hero.chat.messages.user1")}"
                         </div>
                       </div>
                       <div className="bg-[#777cb8]/20 rounded-lg p-3">
                         <div className="text-white text-sm">
-                          "Perfect! I have availability at 2 PM or 4 PM. Which
-                          works better for you?"
+                          "{t("hero.chat.messages.ai")}"
                         </div>
                       </div>
                       <div className="bg-[#fcc142]/20 rounded-lg p-3">
                         <div className="text-white text-sm">
-                          "2 PM sounds great!"
+                          "{t("hero.chat.messages.user2")}"
                         </div>
                       </div>
                       <div className="bg-[#777cb8]/20 rounded-lg p-3">
                         <div className="text-white text-sm">
-                          ✓ Appointment booked for tomorrow at 2 PM
+                          ✓ {t("hero.chat.confirmation")}
                         </div>
                       </div>
                     </div>
@@ -573,11 +647,10 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                Key <span className="text-[#fcc142]">Features</span>
+                {t("features.title")}
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Cutting-edge AI technology designed to transform your customer
-                experience.
+                {t("features.subtitle")}
               </p>
             </div>
 
@@ -601,10 +674,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Real-Time Appointment Booking
+                    {t("features.items.appointmentBooking.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Instantly syncs with your calendar.
+                    {t("features.items.appointmentBooking.description")}
                   </p>
                 </div>
               </div>
@@ -628,10 +701,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Custom Trained
+                    {t("features.items.customTrained.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Tailored to your services, pricing, and FAQs.
+                    {t("features.items.customTrained.description")}
                   </p>
                 </div>
               </div>
@@ -655,10 +728,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Multi-Language Support
+                    {t("features.items.multiLanguage.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Handles English, Arabic, Spanish, and more.
+                    {t("features.items.multiLanguage.description")}
                   </p>
                 </div>
               </div>
@@ -682,10 +755,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Ultra-Human Voices
+                    {t("features.items.ultraHumanVoices.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Natural tone, pacing, and emotion.
+                    {t("features.items.ultraHumanVoices.description")}
                   </p>
                 </div>
               </div>
@@ -709,10 +782,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Always Available
+                    {t("features.items.alwaysAvailable.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    24/7 coverage, including holidays.
+                    {t("features.items.alwaysAvailable.description")}
                   </p>
                 </div>
               </div>
@@ -736,10 +809,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Smart Failover
+                    {t("features.items.smartFailover.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Escalates to a human or records messages.
+                    {t("features.items.smartFailover.description")}
                   </p>
                 </div>
               </div>
@@ -763,10 +836,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Easy Integrations
+                    {t("features.items.easyIntegrations.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Works with calendars, CRMs, and Zapier/Make.
+                    {t("features.items.easyIntegrations.description")}
                   </p>
                 </div>
               </div>
@@ -790,10 +863,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Cost-Saving
+                    {t("features.items.costSaving.title")}
                   </h3>
                   <p className="text-gray-300 text-sm">
-                    Cuts overhead from missed calls and extra hires.
+                    {t("features.items.costSaving.description")}
                   </p>
                 </div>
               </div>
@@ -808,7 +881,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                Why Businesses <span className="text-[#fcc142]">Love It</span>
+                {t("whyUs.title")}
               </h2>
             </div>
 
@@ -838,10 +911,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Never Miss a Lead
+                    {t("whyUs.items.neverMissLead.title")}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Every call answered, every opportunity captured.
+                    {t("whyUs.items.neverMissLead.description")}
                   </p>
                 </div>
               </div>
@@ -870,10 +943,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Lower Costs
+                    {t("whyUs.items.lowerCosts.title")}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    No need for call centers or extra staff.
+                    {t("whyUs.items.lowerCosts.description")}
                   </p>
                 </div>
               </div>
@@ -902,10 +975,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Boost Revenue
+                    {t("whyUs.items.boostRevenue.title")}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    More bookings, more clients, more growth.
+                    {t("whyUs.items.boostRevenue.description")}
                   </p>
                 </div>
               </div>
@@ -934,10 +1007,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#fcc142] transition-colors duration-300">
-                    Better Experience
+                    {t("whyUs.items.betterExperience.title")}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    Instant, professional responses every time.
+                    {t("whyUs.items.betterExperience.description")}
                   </p>
                 </div>
               </div>
@@ -966,10 +1039,10 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#fcc142] transition-colors duration-300">
-                    No Tech Skills Needed
+                    {t("whyUs.items.noTechSkills.title")}
                   </h3>
                   <p className="text-gray-300 text-sm leading-relaxed">
-                    We handle setup & updates for you.
+                    {t("whyUs.items.noTechSkills.description")}
                   </p>
                 </div>
               </div>
@@ -984,7 +1057,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                <span className="text-[#fcc142]">FAQs</span>
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -995,9 +1068,7 @@ export default function Home() {
                   className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
                   onClick={() => toggleFAQ(0)}
                 >
-                  <span>
-                    &ldquo;I don&apos;t trust AI to talk to customers.&rdquo;
-                  </span>
+                  <span>{t("faq.items.0.question")}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 ${
                       openFAQs[0] ? "rotate-180" : ""
@@ -1020,9 +1091,7 @@ export default function Home() {
                   }`}
                 >
                   <div className="px-6 pb-6 text-gray-300">
-                    It&apos;s custom-trained to sound like you. Most callers
-                    can&apos;t tell it&apos;s AI. You control exactly what it
-                    says and how it responds.
+                    {t("faq.items.0.answer")}
                   </div>
                 </div>
               </div>
@@ -1033,7 +1102,7 @@ export default function Home() {
                   className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
                   onClick={() => toggleFAQ(1)}
                 >
-                  <span>&ldquo;What if it gives wrong info?&rdquo;</span>
+                  <span>{t("faq.items.1.question")}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 ${
                       openFAQs[1] ? "rotate-180" : ""
@@ -1056,8 +1125,7 @@ export default function Home() {
                   }`}
                 >
                   <div className="px-6 pb-6 text-gray-300">
-                    It only uses the info you provide. If unsure, it transfers
-                    to a human or records a message. No guessing, no mistakes.
+                    {t("faq.items.1.answer")}
                   </div>
                 </div>
               </div>
@@ -1068,7 +1136,7 @@ export default function Home() {
                   className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
                   onClick={() => toggleFAQ(2)}
                 >
-                  <span>&ldquo;Do customers prefer humans?&rdquo;</span>
+                  <span>{t("faq.items.2.question")}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 ${
                       openFAQs[2] ? "rotate-180" : ""
@@ -1091,8 +1159,7 @@ export default function Home() {
                   }`}
                 >
                   <div className="px-6 pb-6 text-gray-300">
-                    Most want fast service. If they need a human touch, the AI
-                    transfers instantly. Best of both worlds.
+                    {t("faq.items.2.answer")}
                   </div>
                 </div>
               </div>
@@ -1103,7 +1170,7 @@ export default function Home() {
                   className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
                   onClick={() => toggleFAQ(3)}
                 >
-                  <span>&ldquo;Is it secure?&rdquo;</span>
+                  <span>{t("faq.items.3.question")}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 ${
                       openFAQs[3] ? "rotate-180" : ""
@@ -1126,8 +1193,7 @@ export default function Home() {
                   }`}
                 >
                   <div className="px-6 pb-6 text-gray-300">
-                    Yes, fully encrypted and GDPR/local compliant. Your data and
-                    customer information are completely protected.
+                    {t("faq.items.3.answer")}
                   </div>
                 </div>
               </div>
@@ -1138,7 +1204,7 @@ export default function Home() {
                   className="faq-question w-full p-6 text-left cursor-pointer text-white font-semibold text-lg hover:text-[#fcc142] transition-colors duration-300 flex items-center justify-between"
                   onClick={() => toggleFAQ(4)}
                 >
-                  <span>&ldquo;How fast is setup?&rdquo;</span>
+                  <span>{t("faq.items.4.question")}</span>
                   <svg
                     className={`w-5 h-5 transform transition-transform duration-300 ${
                       openFAQs[4] ? "rotate-180" : ""
@@ -1161,8 +1227,7 @@ export default function Home() {
                   }`}
                 >
                   <div className="px-6 pb-6 text-gray-300">
-                    Just 2–5 days — you give us info, we handle the rest. No
-                    technical setup required on your end.
+                    {t("faq.items.4.answer")}
                   </div>
                 </div>
               </div>
@@ -1176,7 +1241,7 @@ export default function Home() {
             {/* Section Divider */}
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
-              Global <span className="text-[#fcc142]">Availability</span>
+              {t("availability.title")}
             </h2>
             <div className="relative inline-block">
               <div className="w-32 h-32 bg-gradient-to-br from-[#fcc142] to-[#777cb8] rounded-full mx-auto mb-8 flex items-center justify-center shadow-2xl animate-pulse">
@@ -1184,22 +1249,10 @@ export default function Home() {
               </div>
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Currently available across{" "}
-              <span className="text-[#fcc142] font-bold">30+ countries</span>,
-              including the USA, UK, Canada, Australia, Germany, France, Italy,
-              Spain, and more.
+              {t("availability.description")}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "USA",
-                "UK",
-                "Canada",
-                "Australia",
-                "Germany",
-                "France",
-                "Italy",
-                "Spain",
-              ].map((country, index) => (
+              {tArray("availability.countries").map((country, index) => (
                 <div
                   key={index}
                   className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-[#fcc142]/30 text-white"
@@ -1217,12 +1270,10 @@ export default function Home() {
             {/* Section Divider */}
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
-              Ready to Upgrade Your{" "}
-              <span className="text-[#fcc142]">Reception?</span>
+              {t("cta.title")}
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Book a free consultation and see how Automera&apos;s AI
-              Receptionist can transform your business.
+              {t("cta.subtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -1230,7 +1281,7 @@ export default function Home() {
                 onClick={handleBookConsultation}
                 className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-12 py-6 rounded-lg font-bold text-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105"
               >
-                Book a Free Consultation
+                {t("cta.button")}
               </button>
             </div>
           </div>
@@ -1281,10 +1332,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400">
-              <p>
-                &copy; 2025 Automera Systems. All rights reserved. Your AI
-                Receptionist Solution.
-              </p>
+              <p>{t("footer.copyright")}</p>
             </div>
           </div>
         </footer>

@@ -1,6 +1,28 @@
 "use client";
 
+import { useLanguage } from "../../contexts/LanguageContext";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import { useEffect } from "react";
+
 export default function Terms() {
+  const { t, tArray } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
+
   return (
     <div className="min-h-screen bg-[#284185] relative overflow-hidden font-sans">
       {/* Tech Pattern Background */}
@@ -69,13 +91,22 @@ export default function Terms() {
               {/* Navigation links removed from secondary pages */}
             </div>
 
-            {/* CTA Button */}
-            <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-              Get Started
-            </button>
+            {/* Right Side - Language Switcher and Home Button - Desktop Only */}
+            <div className="hidden md:flex items-center space-x-4">
+              <LanguageSwitcher />
+              <a
+                href="/"
+                className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+              >
+                {t("nav.home")}
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-white p-2">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white p-2 hover:text-[#fcc142] transition-colors"
+            >
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -94,6 +125,77 @@ export default function Terms() {
         </div>
       </nav>
 
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+          <div className="mobile-menu fixed right-0 top-0 h-full w-80 bg-[#284185] shadow-2xl transform transition-transform duration-300 ease-in-out">
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b border-white/20">
+                <span className="text-white font-bold text-lg">Menu</span>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-white hover:text-[#fcc142] transition-colors p-2"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex-1 p-6 space-y-4">
+                <a
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  {t("nav.home")}
+                </a>
+                <a
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Contact Us
+                </a>
+                <a
+                  href="/privacy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="/terms"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Terms and Conditions
+                </a>
+              </div>
+
+              {/* Bottom Section */}
+              <div className="p-6 border-t border-white/20">
+                <div className="flex justify-center">
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Terms and Conditions Section */}
       <section className="relative min-h-screen overflow-hidden pt-20">
         {/* Content Container */}
@@ -101,16 +203,12 @@ export default function Terms() {
           <div className="text-center mb-12">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
-              Terms &{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fcc142] to-[#777cb8]">
-                Conditions
-              </span>
+              {t("terms.title")}
             </h1>
 
             {/* Subheadline */}
             <p className="text-sm md:text-base text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Please read these terms carefully before using our AI receptionist
-              services.
+              {t("terms.subtitle")}
             </p>
           </div>
 
@@ -121,191 +219,135 @@ export default function Terms() {
                 {/* Last Updated */}
                 <div className="text-center pb-6 border-b border-white/20">
                   <p className="text-gray-300 text-sm">
-                    <strong>Last Updated:</strong> August 2025
+                    <strong>{t("terms.lastUpdated")}</strong>
                   </p>
                 </div>
 
                 {/* Acceptance of Terms */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    1. Acceptance of Terms
+                    {t("terms.sections.acceptance.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    By accessing our website, submitting your information, or
-                    using our services, you agree to be bound by these Terms of
-                    Service. If you do not agree to these terms, please do not
-                    use our website or services.
+                    {t("terms.sections.acceptance.description")}
                   </p>
                 </div>
 
                 {/* Services Provided */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    2. Services Provided
+                    {t("terms.sections.services.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    Automera Systems provides AI-powered automation solutions
-                    including:
+                    {t("terms.sections.services.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>
-                      AI Receptionist (virtual call answering & appointment
-                      booking)
-                    </li>
-                    <li>AI Chatbot (multichannel customer support)</li>
-                    <li>
-                      Custom AI Automations (CRM integrations, workflow
-                      automations, and tailored business solutions)
-                    </li>
+                    {tArray("terms.sections.services.items").map(
+                      (item, index) => (
+                        <li key={index}>{item}</li>
+                      )
+                    )}
                   </ul>
                   <p className="text-gray-300 leading-relaxed mt-4">
-                    All services are subject to availability and ongoing
-                    evaluation of client suitability.
+                    {t("terms.sections.services.additional")}
                   </p>
                 </div>
 
                 {/* User Responsibilities */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    3. User Responsibilities
+                    {t("terms.sections.responsibilities.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    By using our services, you agree to:
+                    {t("terms.sections.responsibilities.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>
-                      Provide accurate and truthful information when filling out
-                      forms
-                    </li>
-                    <li>
-                      Only use our services for lawful and ethical purposes
-                    </li>
-                    <li>
-                      Refrain from abusing, spamming, or attempting to exploit
-                      the systems provided
-                    </li>
+                    {tArray("terms.sections.responsibilities.items").map(
+                      (item, index) => (
+                        <li key={index}>{item}</li>
+                      )
+                    )}
                   </ul>
                 </div>
 
                 {/* SMS Messaging & Communication */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    4. SMS Messaging & Communication
+                    {t("terms.sections.sms.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    By submitting your phone number through our forms or
-                    website, you consent to receive SMS messages from Automera
-                    Systems related to:
+                    {t("terms.sections.sms.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>Appointment reminders</li>
-                    <li>Consultation follow-ups</li>
-                    <li>Service updates and inquiries</li>
+                    {tArray("terms.sections.sms.items").map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
-                  <p className="text-gray-300 leading-relaxed mb-2">
-                    Message frequency varies.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Standard message and data rates may apply.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    You can opt out at any time by replying STOP to any message.
-                    For assistance, reply HELP or email us at{" "}
-                    <a
-                      href="mailto:issa@automerasystems.com"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      issa@automerasystems.com
-                    </a>
-                    .
-                  </p>
+                  <p
+                    className="text-gray-300 leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t("terms.sections.sms.additional"),
+                    }}
+                  />
                 </div>
 
                 {/* Third-Party Tools */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    5. Third-Party Tools
+                    {t("terms.sections.thirdParty.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    We may use third-party tools such as GoHighLevel CRM or
-                    automation platforms (Make.com, n8n, etc.) to manage
-                    communication and service delivery. Your information is
-                    stored securely and used solely for the purposes outlined in
-                    our{" "}
-                    <a
-                      href="/privacy"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      Privacy Policy
-                    </a>
-                    .
+                    {t("terms.sections.thirdParty.description")}
                   </p>
                 </div>
 
                 {/* Data Protection */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    6. Data Protection
+                    {t("terms.sections.dataProtection.title")}
                   </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    We are committed to protecting your data. For full details
-                    on how your data is collected, used, and stored, please
-                    refer to our{" "}
-                    <a
-                      href="/privacy"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      Privacy Policy
-                    </a>
-                    .
-                  </p>
+                  <p
+                    className="text-gray-300 leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t("terms.sections.dataProtection.description"),
+                    }}
+                  />
                 </div>
 
                 {/* Limitation of Liability */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    7. Limitation of Liability
+                    {t("terms.sections.liability.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    Automera Systems is not liable for any indirect, incidental,
-                    or consequential damages resulting from the use of our
-                    services. Results may vary, and no guarantees are implied
-                    unless stated in a specific service agreement.
+                    {t("terms.sections.liability.description")}
                   </p>
                 </div>
 
                 {/* Modifications */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    8. Modifications
+                    {t("terms.sections.modifications.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    We reserve the right to update or modify these terms at any
-                    time. Any changes will be posted on this page with an
-                    updated effective date.
+                    {t("terms.sections.modifications.description")}
                   </p>
                 </div>
 
                 {/* Governing Law */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    9. Governing Law
+                    {t("terms.sections.governingLaw.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    These terms shall be governed by and interpreted in
-                    accordance with the laws of Lebanon.
+                    {t("terms.sections.governingLaw.description")}
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    If you have any questions about these terms, please contact
-                    us at{" "}
-                    <a
-                      href="mailto:issa@automerasystems.com"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      issa@automerasystems.com
-                    </a>
-                    .
-                  </p>
+                  <p
+                    className="text-gray-300 leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t("terms.sections.governingLaw.contact"),
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -330,7 +372,7 @@ export default function Terms() {
                   d="M10 19l-7-7m0 0l7-7m-7 7h18"
                 />
               </svg>
-              Back to Contact Form
+              {t("terms.backToContact")}
             </a>
           </div>
         </div>

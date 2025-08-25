@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLanguage } from "../../contexts/LanguageContext";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
 
 export default function Contact() {
+  const { t } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,6 +19,21 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -175,13 +194,22 @@ export default function Contact() {
                 {/* Navigation links removed from secondary pages */}
               </div>
 
-              {/* CTA Button */}
-              <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                Get Started
-              </button>
+              {/* Right Side - Language Switcher and Home Button - Desktop Only */}
+              <div className="hidden md:flex items-center space-x-4">
+                <LanguageSwitcher />
+                <a
+                  href="/"
+                  className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+                >
+                  {t("nav.home")}
+                </a>
+              </div>
 
               {/* Mobile Menu Button */}
-              <button className="md:hidden text-white p-2">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-white p-2 hover:text-[#fcc142] transition-colors"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -200,6 +228,77 @@ export default function Contact() {
           </div>
         </nav>
 
+        {/* Mobile Menu Drawer */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+            <div className="mobile-menu fixed right-0 top-0 h-full w-80 bg-[#284185] shadow-2xl transform transition-transform duration-300 ease-in-out">
+              <div className="flex flex-col h-full">
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-white/20">
+                  <span className="text-white font-bold text-lg">Menu</span>
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-white hover:text-[#fcc142] transition-colors p-2"
+                  >
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
+                <div className="flex-1 p-6 space-y-4">
+                  <a
+                    href="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    {t("nav.home")}
+                  </a>
+                  <a
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Contact Us
+                  </a>
+                  <a
+                    href="/privacy"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Privacy Policy
+                  </a>
+                  <a
+                    href="/terms"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                  >
+                    Terms and Conditions
+                  </a>
+                </div>
+
+                {/* Bottom Section */}
+                <div className="p-6 border-t border-white/20">
+                  <div className="flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Contact Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
           {/* Content Container */}
@@ -207,16 +306,12 @@ export default function Contact() {
             <div className="text-center mb-12">
               {/* Main Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
-                Book Your{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fcc142] to-[#777cb8]">
-                  Free Consultation
-                </span>
+                {t("contact.title")}
               </h1>
 
               {/* Subheadline */}
               <p className="text-sm md:text-base text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Ready to transform your business with AI? Let's discuss how
-                Automera can help you never miss a client again.
+                {t("contact.subtitle")}
               </p>
             </div>
 
@@ -230,7 +325,7 @@ export default function Contact() {
                       htmlFor="name"
                       className="block text-white text-sm font-medium mb-2"
                     >
-                      Full Name *
+                      {t("contact.form.fullName")}
                     </label>
                     <input
                       type="text"
@@ -241,7 +336,7 @@ export default function Contact() {
                       required
                       suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
-                      placeholder="Enter your full name"
+                      placeholder={t("contact.form.placeholders.fullName")}
                     />
                   </div>
 
@@ -251,7 +346,7 @@ export default function Contact() {
                       htmlFor="email"
                       className="block text-white text-sm font-medium mb-2"
                     >
-                      Email Address *
+                      {t("contact.form.email")}
                     </label>
                     <input
                       type="email"
@@ -262,7 +357,7 @@ export default function Contact() {
                       required
                       suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
-                      placeholder="Enter your email"
+                      placeholder={t("contact.form.placeholders.email")}
                     />
                   </div>
 
@@ -272,7 +367,7 @@ export default function Contact() {
                       htmlFor="company"
                       className="block text-white text-sm font-medium mb-2"
                     >
-                      Company Name
+                      {t("contact.form.company")}
                     </label>
                     <input
                       type="text"
@@ -282,7 +377,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
-                      placeholder="Enter company name"
+                      placeholder={t("contact.form.placeholders.company")}
                     />
                   </div>
 
@@ -292,7 +387,7 @@ export default function Contact() {
                       htmlFor="phone"
                       className="block text-white text-sm font-medium mb-2"
                     >
-                      Phone Number
+                      {t("contact.form.phone")}
                     </label>
                     <input
                       type="tel"
@@ -302,7 +397,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       suppressHydrationWarning
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
-                      placeholder="Enter phone number"
+                      placeholder={t("contact.form.placeholders.phone")}
                     />
                   </div>
                 </div>
@@ -313,7 +408,7 @@ export default function Contact() {
                     htmlFor="businessCountry"
                     className="block text-white text-sm font-medium mb-2"
                   >
-                    Business Country Location
+                    {t("contact.form.businessCountry")}
                   </label>
                   <select
                     id="businessCountry"
@@ -367,7 +462,7 @@ export default function Contact() {
                     htmlFor="message"
                     className="block text-white text-sm font-medium mb-2"
                   >
-                    Tell us about your needs *
+                    {t("contact.form.message")}
                   </label>
                   <textarea
                     id="message"
@@ -378,7 +473,7 @@ export default function Contact() {
                     rows={4}
                     suppressHydrationWarning
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300 resize-none"
-                    placeholder="Describe your business needs and how you think AI could help..."
+                    placeholder={t("contact.form.placeholders.message")}
                   />
                 </div>
 
@@ -415,11 +510,11 @@ export default function Contact() {
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                           ></path>
                         </svg>
-                        Sending...
+                        {t("contact.form.sending")}
                       </>
                     ) : (
                       <>
-                        Book Free Consultation
+                        {t("contact.form.submit")}
                         <svg
                           className="w-5 h-5 ml-2"
                           fill="none"
@@ -441,22 +536,19 @@ export default function Contact() {
                   {submitStatus === "success" && (
                     <div className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-xl text-green-300">
                       <p className="font-medium">
-                        Thank you! Your consultation request has been sent
-                        successfully.
+                        {t("contact.success.title")}
                       </p>
                       <p className="text-sm mt-1">
-                        We'll get back to you soon.
+                        {t("contact.success.subtitle")}
                       </p>
                     </div>
                   )}
 
                   {submitStatus === "error" && (
                     <div className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-300">
-                      <p className="font-medium">
-                        Something went wrong. Please try again.
-                      </p>
+                      <p className="font-medium">{t("contact.error.title")}</p>
                       <p className="text-sm mt-1">
-                        If the problem persists, please contact us directly.
+                        {t("contact.error.subtitle")}
                       </p>
                     </div>
                   )}
@@ -466,16 +558,10 @@ export default function Contact() {
 
             {/* Additional Info */}
             <div className="mt-12 text-center">
-              <p className="text-gray-300 text-sm">
-                By submitting this form, you agree to our{" "}
-                <a href="/privacy" className="text-[#fcc142] hover:underline">
-                  Privacy Policy
-                </a>{" "}
-                and{" "}
-                <a href="/terms" className="text-[#fcc142] hover:underline">
-                  Terms of Service
-                </a>
-              </p>
+              <p
+                className="text-gray-300 text-sm"
+                dangerouslySetInnerHTML={{ __html: t("contact.agreement") }}
+              />
             </div>
 
             {/* Bottom Spacing */}

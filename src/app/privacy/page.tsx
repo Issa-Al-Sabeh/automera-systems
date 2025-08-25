@@ -1,6 +1,28 @@
 "use client";
 
+import { useLanguage } from "../../contexts/LanguageContext";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
+import { useEffect } from "react";
+
 export default function Privacy() {
+  const { t } = useLanguage();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        mobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu")
+      ) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [mobileMenuOpen]);
+
   return (
     <div className="min-h-screen bg-[#284185] relative overflow-hidden font-sans">
       {/* Tech Pattern Background */}
@@ -69,13 +91,22 @@ export default function Privacy() {
               {/* Navigation links removed from secondary pages */}
             </div>
 
-            {/* CTA Button */}
-            <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-              Get Started
-            </button>
+            {/* Right Side - Language Switcher and Home Button - Desktop Only */}
+            <div className="hidden md:flex items-center space-x-4">
+              <LanguageSwitcher />
+              <a
+                href="/"
+                className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+              >
+                {t("nav.home")}
+              </a>
+            </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-white p-2">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white p-2 hover:text-[#fcc142] transition-colors"
+            >
               <svg
                 className="w-5 h-5"
                 fill="none"
@@ -94,6 +125,77 @@ export default function Privacy() {
         </div>
       </nav>
 
+      {/* Mobile Menu Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
+          <div className="mobile-menu fixed right-0 top-0 h-full w-80 bg-[#284185] shadow-2xl transform transition-transform duration-300 ease-in-out">
+            <div className="flex flex-col h-full">
+              {/* Header */}
+              <div className="flex items-center justify-between p-6 border-b border-white/20">
+                <span className="text-white font-bold text-lg">Menu</span>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-white hover:text-[#fcc142] transition-colors p-2"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="flex-1 p-6 space-y-4">
+                <a
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  {t("nav.home")}
+                </a>
+                <a
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Contact Us
+                </a>
+                <a
+                  href="/privacy"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="/terms"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                >
+                  Terms and Conditions
+                </a>
+              </div>
+
+              {/* Bottom Section */}
+              <div className="p-6 border-t border-white/20">
+                <div className="flex justify-center">
+                  <LanguageSwitcher />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Privacy Policy Section */}
       <section className="relative min-h-screen overflow-hidden pt-20">
         {/* Content Container */}
@@ -101,16 +203,12 @@ export default function Privacy() {
           <div className="text-center mb-12">
             {/* Main Headline */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
-              Privacy{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fcc142] to-[#777cb8]">
-                Policy
-              </span>
+              {t("privacy.title")}
             </h1>
 
             {/* Subheadline */}
             <p className="text-sm md:text-base text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-              Your privacy is important to us. Learn how we collect, use, and
-              protect your information.
+              {t("privacy.subtitle")}
             </p>
           </div>
 
@@ -121,130 +219,98 @@ export default function Privacy() {
                 {/* Last Updated */}
                 <div className="text-center pb-6 border-b border-white/20">
                   <p className="text-gray-300 text-sm">
-                    <strong>Last Updated:</strong> August 2025
+                    <strong>{t("privacy.lastUpdated")}</strong>
                   </p>
                 </div>
 
                 {/* What Information We Collect */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    1. What Information We Collect
+                    {t("privacy.sections.collect.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    When you interact with our website or submit a form, we may
-                    collect the following information:
+                    {t("privacy.sections.collect.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>Your name</li>
-                    <li>Your email address</li>
-                    <li>Your phone number</li>
+                    <li>{t("privacy.sections.collect.items.0")}</li>
+                    <li>{t("privacy.sections.collect.items.1")}</li>
+                    <li>{t("privacy.sections.collect.items.2")}</li>
                   </ul>
                 </div>
 
                 {/* How We Use Your Information */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    2. How We Use Your Information
+                    {t("privacy.sections.use.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    We use the information you provide to:
+                    {t("privacy.sections.use.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>Book and manage consultations</li>
-                    <li>
-                      Send SMS updates, reminders, or responses to inquiries
-                    </li>
-                    <li>
-                      Follow up via text or email to assist with scheduling or
-                      answering questions
-                    </li>
+                    <li>{t("privacy.sections.use.items.0")}</li>
+                    <li>{t("privacy.sections.use.items.1")}</li>
+                    <li>{t("privacy.sections.use.items.2")}</li>
                   </ul>
                 </div>
 
                 {/* Text Messaging & Consent */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    3. Text Messaging & Consent
+                    {t("privacy.sections.sms.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    By submitting your information, you consent to receive SMS
-                    messages from Automera Systems related to appointment
-                    confirmations, scheduling assistance, and general inquiries.
+                    {t("privacy.sections.sms.description")}
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Message frequency varies. Standard message and data rates
-                    may apply. You can opt out at any time by replying STOP to
-                    any SMS. For assistance, reply HELP or email us at{" "}
-                    <a
-                      href="mailto:issa@automerasystems.com"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      issa@automerasystems.com
-                    </a>
-                    .
-                  </p>
+                  <p
+                    className="text-gray-300 leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: t("privacy.sections.sms.additional"),
+                    }}
+                  />
                 </div>
 
                 {/* How We Share Your Information */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    4. How We Share Your Information
+                    {t("privacy.sections.share.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    We do not sell or share your personal information with any
-                    third parties for marketing purposes.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    Your contact information may be stored in our internal
-                    systems (such as GoHighLevel CRM) strictly for business
-                    purposes like booking and communication.
+                    {t("privacy.sections.share.description")}
                   </p>
                   <p className="text-gray-300 leading-relaxed">
-                    No mobile information will be shared with third
-                    parties/affiliates for marketing/promotional purposes.
-                    Information sharing to subcontractors in support services,
-                    such as customer service, is allowed. All the above
-                    categories exclude text messaging originator opt-in data and
-                    consent; this information will not be shared with any third
-                    parties, excluding aggregators and providers of the Text
-                    Message service.
+                    {t("privacy.sections.share.additional")}
                   </p>
                 </div>
 
                 {/* Data Security */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    5. Data Security
+                    {t("privacy.sections.security.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    We take reasonable steps to protect the personal information
-                    you provide from unauthorized access, disclosure, or misuse.
+                    {t("privacy.sections.security.description")}
                   </p>
                 </div>
 
                 {/* Your Rights */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    6. Your Rights
+                    {t("privacy.sections.rights.title")}
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    If you wish to:
+                    {t("privacy.sections.rights.description")}
                   </p>
                   <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
-                    <li>Update or delete your personal information</li>
-                    <li>Withdraw your consent</li>
-                    <li>Ask questions about our privacy practices</li>
+                    <li>{t("privacy.sections.rights.items.0")}</li>
+                    <li>{t("privacy.sections.rights.items.1")}</li>
+                    <li>{t("privacy.sections.rights.items.2")}</li>
                   </ul>
-                  <p className="text-gray-300 leading-relaxed mt-4">
-                    Please email us at{" "}
-                    <a
-                      href="mailto:issa@automerasystems.com"
-                      className="text-[#fcc142] hover:underline"
-                    >
-                      issa@automerasystems.com
-                    </a>
-                    .
-                  </p>
+                  <p
+                    className="text-gray-300 leading-relaxed mt-4"
+                    dangerouslySetInnerHTML={{
+                      __html: t("privacy.sections.rights.contact"),
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -269,7 +335,7 @@ export default function Privacy() {
                   d="M10 19l-7-7m0 0l7-7m-7 7h18"
                 />
               </svg>
-              Back to Contact Form
+              {t("privacy.backToContact")}
             </a>
           </div>
         </div>

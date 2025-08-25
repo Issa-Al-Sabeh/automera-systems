@@ -1,0 +1,315 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "features": "Funktionen",
+    "whyUs": "Warum Wir",
+    "about": "Über Uns",
+    "faq": "FAQ",
+    "getStarted": "Jetzt Starten"
+  },
+  "hero": {
+    "title": "Ihr KI-Rezeptionist — Immer Aktiv, Immer Bereit",
+    "subtitle": "Verpassen Sie nie wieder einen Kunden. Automeras KI-Rezeptionist beantwortet Anrufe, bucht Termine und vermittelt einen professionellen ersten Eindruck — 24/7.",
+    "bookConsultation": "Kostenlose Beratung Buchen",
+    "learnMore": "Mehr Erfahren",
+    "status": {
+      "aiActive": "KI Aktiv",
+      "readyToHelp": "Bereit zu helfen",
+      "alwaysAvailable": "24/7 Verfügbar",
+      "neverOffline": "Nie offline",
+      "multiLanguage": "Mehrsprachig",
+      "globalSupport": "Globaler Support"
+    },
+    "chat": {
+      "title": "KI-Rezeptionist",
+      "status": "Online • Bereit zu helfen",
+      "messages": {
+        "user1": "Hallo! Ich möchte einen Termin für morgen buchen.",
+        "ai": "Perfekt! Ich habe Verfügbarkeit um 14:00 oder 16:00 Uhr. Was passt Ihnen besser?",
+        "user2": "14:00 Uhr klingt gut!"
+      },
+      "confirmation": "Termin für morgen um 14:00 Uhr gebucht"
+    }
+  },
+  "about": {
+    "title": "Über Automera Systems",
+    "description": "Bei Automera Systems glauben wir, dass kein Unternehmen Kunden durch verpasste Anrufe oder lange Wartezeiten verlieren sollte. Deshalb haben wir einen leistungsstarken KI-Rezeptionisten entwickelt, der Ihre Abläufe optimiert, Kosten senkt und Ihre Kundenerfahrung verbessert."
+  },
+  "aiReceptionist": {
+    "title": "Was ist der KI-Rezeptionist?",
+    "description": "Ihr virtueller Rezeptionist, der rund um die Uhr arbeitet. Er bucht Termine direkt in Ihren Kalender, beantwortet FAQs, fängt Leads ab und stellt sicher, dass jeder Anruf beantwortet wird — auch außerhalb der Geschäftszeiten, an Wochenenden und Feiertagen.",
+    "features": [
+      "Verpasst nie einen Anruf",
+      "Bucht Termine sofort",
+      "Fängt jeden Lead ab"
+    ]
+  },
+  "features": {
+    "title": "Hauptfunktionen",
+    "subtitle": "Hochmoderne KI-Technologie, entwickelt um Ihre Kundenerfahrung zu transformieren.",
+    "items": {
+      "appointmentBooking": {
+        "title": "Echtzeit-Terminbuchung",
+        "description": "Synchronisiert sich sofort mit Ihrem Kalender."
+      },
+      "customTrained": {
+        "title": "Individuell Trainiert",
+        "description": "Angepasst an Ihre Dienstleistungen, Preise und FAQs."
+      },
+      "multiLanguage": {
+        "title": "Mehrsprachige Unterstützung",
+        "description": "Behandelt Deutsch, Englisch, Arabisch, Spanisch und mehr."
+      },
+      "ultraHumanVoices": {
+        "title": "Ultra-menschliche Stimmen",
+        "description": "Natürlicher Ton, Rhythmus und Emotion."
+      },
+      "alwaysAvailable": {
+        "title": "Immer Verfügbar",
+        "description": "24/7 Abdeckung, einschließlich Feiertagen."
+      },
+      "smartFailover": {
+        "title": "Intelligenter Failover",
+        "description": "Leitet an einen Menschen weiter oder zeichnet Nachrichten auf."
+      },
+      "easyIntegrations": {
+        "title": "Einfache Integrationen",
+        "description": "Funktioniert mit Kalendern, CRMs und Zapier/Make."
+      },
+      "costSaving": {
+        "title": "Kosteneinsparung",
+        "description": "Reduziert Overhead durch verpasste Anrufe und zusätzliche Einstellungen."
+      }
+    }
+  },
+  "whyUs": {
+    "title": "Warum Unternehmen Es Lieben",
+    "items": {
+      "neverMissLead": {
+        "title": "Verpassen Sie Nie Einen Lead",
+        "description": "Jeder Anruf beantwortet, jede Gelegenheit genutzt."
+      },
+      "lowerCosts": {
+        "title": "Niedrigere Kosten",
+        "description": "Kein Callcenter oder zusätzliches Personal erforderlich."
+      },
+      "boostRevenue": {
+        "title": "Umsatz Steigern",
+        "description": "Mehr Buchungen, mehr Kunden, mehr Wachstum."
+      },
+      "betterExperience": {
+        "title": "Bessere Erfahrung",
+        "description": "Sofortige, professionelle Antworten jedes Mal."
+      },
+      "noTechSkills": {
+        "title": "Keine Technischen Kenntnisse Erforderlich",
+        "description": "Wir übernehmen Einrichtung und Updates für Sie."
+      }
+    }
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "question": "\"Ich vertraue der KI nicht, um mit Kunden zu sprechen.\"",
+        "answer": "Sie ist individuell trainiert, um wie Sie zu klingen. Die meisten Anrufer können nicht erkennen, dass es sich um KI handelt. Sie kontrollieren genau, was sie sagt und wie sie antwortet."
+      },
+      {
+        "question": "\"Was, wenn sie falsche Informationen gibt?\"",
+        "answer": "Sie verwendet nur die Informationen, die Sie bereitstellen. Wenn sie sich nicht sicher ist, leitet sie an einen Menschen weiter oder zeichnet eine Nachricht auf. Keine Vermutungen, keine Fehler."
+      },
+      {
+        "question": "\"Bevorzugen Kunden Menschen?\"",
+        "answer": "Die meisten wollen schnellen Service. Wenn sie eine menschliche Note brauchen, leitet die KI sofort weiter. Das Beste aus beiden Welten."
+      },
+      {
+        "question": "\"Ist es sicher?\"",
+        "answer": "Ja, vollständig verschlüsselt und DSGVO/lokal konform. Ihre Daten und Kundeninformationen sind vollständig geschützt."
+      },
+      {
+        "question": "\"Wie schnell ist die Einrichtung?\"",
+        "answer": "Nur 2-5 Tage — Sie geben uns Informationen, wir übernehmen den Rest. Keine technische Einrichtung erforderlich."
+      }
+    ]
+  },
+  "availability": {
+    "title": "Globale Verfügbarkeit",
+    "description": "Derzeit verfügbar in über 30 Ländern, einschließlich Deutschland, USA, UK, Kanada, Australien, Frankreich, Italien, Spanien und mehr.",
+    "countries": [
+      "Deutschland",
+      "USA",
+      "UK",
+      "Kanada",
+      "Australien",
+      "Frankreich",
+      "Italien",
+      "Spanien"
+    ]
+  },
+  "cta": {
+    "title": "Bereit, Ihre Rezeption zu Upgraden?",
+    "subtitle": "Buchen Sie eine kostenlose Beratung und sehen Sie, wie Automeras KI-Rezeptionist Ihr Unternehmen transformieren kann.",
+    "button": "Kostenlose Beratung Buchen"
+  },
+  "footer": {
+    "copyright": "© 2025 Automera Systems. Alle Rechte vorbehalten. Ihre KI-Rezeptionist-Lösung."
+  },
+  "contact": {
+    "title": "Buchen Sie Ihre Kostenlose Beratung",
+    "subtitle": "Bereit, Ihr Unternehmen mit KI zu transformieren? Lassen Sie uns besprechen, wie Automera Ihnen helfen kann, nie wieder einen Kunden zu verpassen.",
+    "form": {
+      "fullName": "Vollständiger Name *",
+      "email": "E-Mail-Adresse *",
+      "company": "Firmenname",
+      "phone": "Telefonnummer",
+      "businessCountry": "Geschäftsstandort",
+      "message": "Erzählen Sie uns von Ihren Bedürfnissen *",
+      "submit": "Kostenlose Beratung Buchen",
+      "sending": "Wird gesendet...",
+      "placeholders": {
+        "fullName": "Geben Sie Ihren vollständigen Namen ein",
+        "email": "Geben Sie Ihre E-Mail ein",
+        "company": "Geben Sie den Firmennamen ein",
+        "phone": "Geben Sie die Telefonnummer ein",
+        "message": "Beschreiben Sie Ihre Geschäftsbedürfnisse und wie Sie denken, dass KI helfen könnte..."
+      }
+    },
+    "success": {
+      "title": "Vielen Dank! Ihre Beratungsanfrage wurde erfolgreich gesendet.",
+      "subtitle": "Wir melden uns bald bei Ihnen."
+    },
+    "error": {
+      "title": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      "subtitle": "Wenn das Problem weiterhin besteht, kontaktieren Sie uns bitte direkt."
+    },
+    "agreement": "Durch das Absenden dieses Formulars stimmen Sie unserer <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Datenschutzerklärung</a> und den <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Nutzungsbedingungen</a> zu"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "subtitle": "Ihr Datenschutz ist uns wichtig. Erfahren Sie, wie wir Ihre Informationen sammeln, verwenden und schützen.",
+    "lastUpdated": "Zuletzt aktualisiert: August 2025",
+    "sections": {
+      "collect": {
+        "title": "1. Welche Informationen Wir Sammeln",
+        "description": "Wenn Sie mit unserer Website interagieren oder ein Formular absenden, können wir folgende Informationen sammeln:",
+        "items": {
+          "0": "Ihr Name",
+          "1": "Ihre E-Mail-Adresse",
+          "2": "Ihre Telefonnummer"
+        }
+      },
+      "use": {
+        "title": "2. Wie Wir Ihre Informationen Verwenden",
+        "description": "Wir verwenden die von Ihnen bereitgestellten Informationen für:",
+        "items": {
+          "0": "Buchung und Verwaltung von Beratungen",
+          "1": "SMS-Updates, Erinnerungen oder Antworten auf Anfragen",
+          "2": "Nachverfolgung per SMS oder E-Mail zur Unterstützung bei der Terminplanung oder Beantwortung von Fragen"
+        }
+      },
+      "sms": {
+        "title": "3. SMS-Nachrichten & Einverständnis",
+        "description": "Durch das Absenden Ihrer Informationen stimmen Sie zu, SMS-Nachrichten von Automera Systems zu erhalten, die sich auf Terminbestätigungen, Terminplanungshilfe und allgemeine Anfragen beziehen.",
+        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede SMS antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "share": {
+        "title": "4. Wie Wir Ihre Informationen Teilen",
+        "description": "Wir verkaufen oder teilen Ihre persönlichen Informationen nicht mit Dritten zu Marketingzwecken.",
+        "additional": "Ihre Kontaktinformationen können in unseren internen Systemen (wie GoHighLevel CRM) gespeichert werden, streng für Geschäftszwecke wie Buchungen und Kommunikation. Keine mobilen Informationen werden mit Dritten/Partnern zu Marketing-/Werbezwecken geteilt. Die Weitergabe von Informationen an Subunternehmer in Supportdiensten, wie dem Kundenservice, ist erlaubt. Alle oben genannten Kategorien schließen Textnachrichten-Ursprungs-Opt-in-Daten und Einverständnis aus; diese Informationen werden nicht mit Dritten geteilt, mit Ausnahme von Aggregatoren und Anbietern des Textnachrichtendienstes."
+      },
+      "security": {
+        "title": "5. Datensicherheit",
+        "description": "Wir unternehmen angemessene Schritte, um die von Ihnen bereitgestellten persönlichen Informationen vor unbefugtem Zugriff, Offenlegung oder Missbrauch zu schützen."
+      },
+      "rights": {
+        "title": "6. Ihre Rechte",
+        "description": "Wenn Sie möchten:",
+        "items": {
+          "0": "Ihre persönlichen Informationen aktualisieren oder löschen",
+          "1": "Ihr Einverständnis widerrufen",
+          "2": "Fragen zu unseren Datenschutzpraktiken stellen"
+        },
+        "contact": "Senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Zurück zum Kontaktformular"
+  },
+  "chat": {
+    "title": "KI-Rezeptionist",
+    "status": "• Online • Bereit zu helfen",
+    "messages": {
+      "user": {
+        "greeting": "Hallo! Ich möchte einen Termin für morgen buchen.",
+        "confirmation": "14:00 Uhr klingt gut!"
+      },
+      "ai": {
+        "availability": "Perfekt! Ich habe Verfügbarkeit um 14:00 oder 16:00 Uhr. Was passt Ihnen besser?"
+      }
+    },
+    "confirmation": "Termin für morgen um 14:00 Uhr gebucht",
+    "inputPlaceholder": "Geben Sie Ihre Nachricht ein...",
+    "sendButton": "Senden"
+  },
+  "terms": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "subtitle": "Bitte lesen Sie diese Bedingungen sorgfältig durch, bevor Sie unsere KI-Rezeptionist-Dienste nutzen.",
+    "lastUpdated": "Zuletzt aktualisiert: August 2025",
+    "sections": {
+      "acceptance": {
+        "title": "1. Annahme der Bedingungen",
+        "description": "Durch den Zugriff auf unsere Website, das Absenden Ihrer Informationen oder die Nutzung unserer Dienste stimmen Sie zu, an diese Nutzungsbedingungen gebunden zu sein. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie bitte nicht unsere Website oder Dienste."
+      },
+      "services": {
+        "title": "2. Bereitgestellte Dienste",
+        "description": "Automera Systems bietet KI-gestützte Automatisierungslösungen einschließlich:",
+        "items": [
+          "KI-Rezeptionist (virtuelle Anrufbeantwortung & Terminbuchung)",
+          "KI-Chatbot (mehrkanaliger Kundensupport)",
+          "Benutzerdefinierte KI-Automatisierungen (CRM-Integrationen, Workflow-Automatisierungen und maßgeschneiderte Geschäftslösungen)"
+        ],
+        "additional": "Alle Dienste unterliegen der Verfügbarkeit und laufenden Bewertung der Kundenqualifikation."
+      },
+      "responsibilities": {
+        "title": "3. Benutzerverantwortlichkeiten",
+        "description": "Durch die Nutzung unserer Dienste stimmen Sie zu:",
+        "items": [
+          "Genaue und wahrheitsgemäße Informationen beim Ausfüllen von Formularen bereitzustellen",
+          "Unsere Dienste nur für rechtmäßige und ethische Zwecke zu nutzen",
+          "Von Missbrauch, Spam oder Versuchen, die bereitgestellten Systeme auszunutzen, abzusehen"
+        ]
+      },
+      "sms": {
+        "title": "4. SMS-Nachrichten & Kommunikation",
+        "description": "Durch das Absenden Ihrer Telefonnummer über unsere Formulare oder Website stimmen Sie zu, SMS-Nachrichten von Automera Systems zu erhalten, die sich auf beziehen:",
+        "items": [
+          "Terminerinnerungen",
+          "Beratungs-Nachverfolgung",
+          "Service-Updates und Anfragen"
+        ],
+        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede Nachricht antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      },
+      "thirdParty": {
+        "title": "5. Drittanbieter-Tools",
+        "description": "Wir können Drittanbieter-Tools wie GoHighLevel CRM oder Automatisierungsplattformen (Make.com, n8n, etc.) verwenden, um Kommunikation und Servicebereitstellung zu verwalten. Ihre Informationen werden sicher gespeichert und ausschließlich für die in unserer Datenschutzerklärung beschriebenen Zwecke verwendet."
+      },
+      "dataProtection": {
+        "title": "6. Datenschutz",
+        "description": "Wir setzen uns für den Schutz Ihrer Daten ein. Für vollständige Details darüber, wie Ihre Daten gesammelt, verwendet und gespeichert werden, verweisen wir auf unsere <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Datenschutzerklärung</a>."
+      },
+      "liability": {
+        "title": "7. Haftungsbeschränkung",
+        "description": "Automera Systems haftet nicht für indirekte, zufällige oder Folgeschäden, die sich aus der Nutzung unserer Dienste ergeben. Ergebnisse können variieren, und es werden keine Garantien impliziert, es sei denn, sie sind in einer spezifischen Servicevereinbarung angegeben."
+      },
+      "modifications": {
+        "title": "8. Änderungen",
+        "description": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu aktualisieren oder zu ändern. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Gültigkeitsdatum veröffentlicht."
+      },
+      "governingLaw": {
+        "title": "9. Geltendes Recht",
+        "description": "Diese Bedingungen unterliegen den Gesetzen des Libanon und werden in Übereinstimmung mit diesen ausgelegt.",
+        "contact": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+      }
+    },
+    "backToContact": "Zurück zum Kontaktformular"
+  }
+}
