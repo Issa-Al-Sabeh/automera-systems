@@ -1,10 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [openFAQs, setOpenFAQs] = useState([false, false, false, false, false]);
+  const router = useRouter();
 
   const toggleFAQ = (index: number) => {
     setOpenFAQs((prev) => {
@@ -14,13 +16,40 @@ export default function Home() {
     });
   };
 
+  const handleBookConsultation = () => {
+    router.push("/contact");
+  };
+
+  // Handle scroll behavior when navigating from other pages
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (typeof window !== "undefined" && window.location.hash) {
+      // Small delay to ensure page is fully rendered
+      const timer = setTimeout(() => {
+        const targetId = window.location.hash;
+        const targetElement = document.querySelector(targetId) as HTMLElement;
+        if (targetElement) {
+          const targetPosition = targetElement.offsetTop - 80;
+          // Use instant scroll to avoid interference with normal scrolling
+          window.scrollTo(0, targetPosition);
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    } else {
+      // If no hash, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <>
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            // Custom slower smooth scrolling
+            // Enhanced scroll behavior for both same-page and cross-page navigation
             document.addEventListener('DOMContentLoaded', function() {
+              // Handle anchor links within the same page
               const links = document.querySelectorAll('a[href^="#"]');
               links.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -53,6 +82,40 @@ export default function Home() {
                   }
                 });
               });
+
+              // Handle URL hash on page load (for cross-page navigation)
+              if (window.location.hash) {
+                // Small delay to ensure page is fully rendered
+                setTimeout(() => {
+                  const targetId = window.location.hash;
+                  const targetElement = document.querySelector(targetId);
+                  if (targetElement && targetElement instanceof HTMLElement) {
+                    const targetPosition = targetElement.offsetTop - 80;
+                    // Use instant scroll for cross-page navigation to avoid interference
+                    window.scrollTo(0, targetPosition);
+                  }
+                }, 100);
+              } else {
+                // If no hash, scroll to top
+                window.scrollTo(0, 0);
+              }
+            });
+
+            // Handle browser back/forward navigation
+            window.addEventListener('popstate', function() {
+              if (window.location.hash) {
+                setTimeout(() => {
+                  const targetId = window.location.hash;
+                  const targetElement = document.querySelector(targetId);
+                  if (targetElement && targetElement instanceof HTMLElement) {
+                    const targetPosition = targetElement.offsetTop - 80;
+                    // Use instant scroll for browser navigation to avoid interference
+                    window.scrollTo(0, targetPosition);
+                  }
+                }, 100);
+              } else {
+                window.scrollTo(0, 0);
+              }
             });
           `,
         }}
@@ -115,14 +178,17 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-3">
               {/* Logo Section */}
-              <div className="flex items-center space-x-3">
+              <a
+                href="/"
+                className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+              >
                 <div className="w-8 h-8 bg-[#fcc142] rounded-xl flex items-center justify-center shadow-lg">
                   <span className="text-[#284185] font-bold text-lg">A</span>
                 </div>
                 <span className="text-white font-bold text-lg tracking-tight">
                   Automera Systems
                 </span>
-              </div>
+              </a>
 
               {/* Centered Navigation Links */}
               <div className="hidden md:flex space-x-8">
@@ -137,6 +203,12 @@ export default function Home() {
                   className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
                 >
                   Features
+                </a>
+                <a
+                  href="#why-us"
+                  className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
+                >
+                  Why Us
                 </a>
                 <a
                   href="#about"
@@ -230,7 +302,7 @@ export default function Home() {
                     </svg>
                   </a>
                   <a
-                    href="/contact"
+                    href="#ai-receptionist"
                     className="border-2 border-[#777cb8] hover:bg-[#777cb8] hover:text-white text-[#777cb8] px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 hover:scale-105 inline-block"
                   >
                     Learn More
@@ -396,7 +468,10 @@ export default function Home() {
         </section>
 
         {/* What is the AI Receptionist */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <section
+          id="ai-receptionist"
+          className="py-20 px-4 sm:px-6 lg:px-8 relative"
+        >
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -727,7 +802,7 @@ export default function Home() {
         </section>
 
         {/* Why Businesses Love It */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        <section id="why-us" className="py-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-7xl mx-auto">
             {/* Section Divider */}
             <div className="w-24 h-1 bg-gradient-to-r from-[#fcc142] to-[#777cb8] mx-auto mb-16"></div>
@@ -1116,14 +1191,14 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                "🇺🇸 USA",
-                "🇬🇧 UK",
-                "🇨🇦 Canada",
-                "🇦🇺 Australia",
-                "🇩🇪 Germany",
-                "🇫🇷 France",
-                "🇮🇹 Italy",
-                "🇪🇸 Spain",
+                "USA",
+                "UK",
+                "Canada",
+                "Australia",
+                "Germany",
+                "France",
+                "Italy",
+                "Spain",
               ].map((country, index) => (
                 <div
                   key={index}
@@ -1151,7 +1226,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-              <button className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-12 py-6 rounded-lg font-bold text-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105">
+              <button
+                onClick={handleBookConsultation}
+                className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-12 py-6 rounded-lg font-bold text-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-[#fcc142]/30 hover:scale-105"
+              >
                 Book a Free Consultation
               </button>
             </div>
@@ -1204,12 +1282,33 @@ export default function Home() {
             </div>
             <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-400">
               <p>
-                &copy; 2024 Automera Systems. All rights reserved. Your AI
+                &copy; 2025 Automera Systems. All rights reserved. Your AI
                 Receptionist Solution.
               </p>
             </div>
           </div>
         </footer>
+
+        {/* Scroll to Top Button */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] p-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 z-40"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
       </div>
     </>
   );

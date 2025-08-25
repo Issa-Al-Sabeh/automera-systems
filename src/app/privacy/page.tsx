@@ -52,41 +52,21 @@ export default function Privacy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
             {/* Logo Section */}
-            <div className="flex items-center space-x-3">
+            <a
+              href="/"
+              className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
               <div className="w-8 h-8 bg-[#fcc142] rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-[#284185] font-bold text-lg">A</span>
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
                 Automera Systems
               </span>
-            </div>
+            </a>
 
-            {/* Centered Navigation Links */}
+            {/* Centered Navigation Links - Removed for secondary pages */}
             <div className="hidden md:flex space-x-8">
-              <a
-                href="/"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                Home
-              </a>
-              <a
-                href="/#features"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                Features
-              </a>
-              <a
-                href="/#about"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                About
-              </a>
-              <a
-                href="/#faq"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                FAQ
-              </a>
+              {/* Navigation links removed from secondary pages */}
             </div>
 
             {/* CTA Button */}
@@ -141,230 +121,130 @@ export default function Privacy() {
                 {/* Last Updated */}
                 <div className="text-center pb-6 border-b border-white/20">
                   <p className="text-gray-300 text-sm">
-                    <strong>Last Updated:</strong> December 2024
+                    <strong>Last Updated:</strong> August 2025
                   </p>
                 </div>
 
-                {/* Introduction */}
+                {/* What Information We Collect */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Introduction
+                    1. What Information We Collect
                   </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Automera Systems ("we," "our," or "us") is committed to
-                    protecting your privacy. This Privacy Policy explains how we
-                    collect, use, disclose, and safeguard your information when
-                    you use our AI receptionist services and visit our website.
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    When you interact with our website or submit a form, we may
+                    collect the following information:
                   </p>
-                </div>
-
-                {/* Information We Collect */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Information We Collect
-                  </h2>
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="text-xl font-semibold text-[#fcc142] mb-2">
-                        Personal Information
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        We may collect personal information that you voluntarily
-                        provide to us when you:
-                      </p>
-                      <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1 ml-4">
-                        <li>Fill out contact forms or consultation requests</li>
-                        <li>Sign up for our services</li>
-                        <li>Subscribe to our newsletter</li>
-                        <li>Contact our support team</li>
-                        <li>Participate in surveys or promotions</li>
-                      </ul>
-                      <p className="text-gray-300 leading-relaxed mt-2">
-                        This information may include your name, email address,
-                        phone number, company name, and any other information
-                        you choose to provide.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold text-[#fcc142] mb-2">
-                        Usage Information
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        We automatically collect certain information about your
-                        device and how you interact with our services,
-                        including:
-                      </p>
-                      <ul className="list-disc list-inside text-gray-300 mt-2 space-y-1 ml-4">
-                        <li>IP address and device information</li>
-                        <li>Browser type and version</li>
-                        <li>Pages visited and time spent</li>
-                        <li>Referring website</li>
-                        <li>Service usage patterns and analytics</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Your name</li>
+                    <li>Your email address</li>
+                    <li>Your phone number</li>
+                  </ul>
                 </div>
 
                 {/* How We Use Your Information */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    How We Use Your Information
+                    2. How We Use Your Information
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    We use the information we collect to:
+                    We use the information you provide to:
                   </p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li>Provide and maintain our AI receptionist services</li>
-                    <li>Process your consultation requests and inquiries</li>
-                    <li>Send you important updates about our services</li>
-                    <li>Improve our services and develop new features</li>
-                    <li>Respond to your questions and provide support</li>
-                    <li>Send marketing communications (with your consent)</li>
-                    <li>Comply with legal obligations</li>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Book and manage consultations</li>
+                    <li>
+                      Send SMS updates, reminders, or responses to inquiries
+                    </li>
+                    <li>
+                      Follow up via text or email to assist with scheduling or
+                      answering questions
+                    </li>
                   </ul>
                 </div>
 
-                {/* Information Sharing */}
+                {/* Text Messaging & Consent */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Information Sharing and Disclosure
+                    3. Text Messaging & Consent
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    We do not sell, trade, or otherwise transfer your personal
-                    information to third parties without your consent, except in
-                    the following circumstances:
+                    By submitting your information, you consent to receive SMS
+                    messages from Automera Systems related to appointment
+                    confirmations, scheduling assistance, and general inquiries.
                   </p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li>
-                      With service providers who assist us in operating our
-                      business
-                    </li>
-                    <li>
-                      To comply with legal requirements or protect our rights
-                    </li>
-                    <li>In connection with a business transfer or merger</li>
-                    <li>With your explicit consent</li>
-                  </ul>
+                  <p className="text-gray-300 leading-relaxed">
+                    Message frequency varies. Standard message and data rates
+                    may apply. You can opt out at any time by replying STOP to
+                    any SMS. For assistance, reply HELP or email us at{" "}
+                    <a
+                      href="mailto:issa@automerasystems.com"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      issa@automerasystems.com
+                    </a>
+                    .
+                  </p>
+                </div>
+
+                {/* How We Share Your Information */}
+                <div>
+                  <h2 className="text-2xl font-bold text-white mb-4">
+                    4. How We Share Your Information
+                  </h2>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    We do not sell or share your personal information with any
+                    third parties for marketing purposes.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    Your contact information may be stored in our internal
+                    systems (such as GoHighLevel CRM) strictly for business
+                    purposes like booking and communication.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    No mobile information will be shared with third
+                    parties/affiliates for marketing/promotional purposes.
+                    Information sharing to subcontractors in support services,
+                    such as customer service, is allowed. All the above
+                    categories exclude text messaging originator opt-in data and
+                    consent; this information will not be shared with any third
+                    parties, excluding aggregators and providers of the Text
+                    Message service.
+                  </p>
                 </div>
 
                 {/* Data Security */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Data Security
+                    5. Data Security
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    We implement appropriate technical and organizational
-                    security measures to protect your personal information
-                    against unauthorized access, alteration, disclosure, or
-                    destruction. However, no method of transmission over the
-                    internet is 100% secure, and we cannot guarantee absolute
-                    security.
+                    We take reasonable steps to protect the personal information
+                    you provide from unauthorized access, disclosure, or misuse.
                   </p>
                 </div>
 
                 {/* Your Rights */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Your Rights and Choices
+                    6. Your Rights
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    You have the right to:
+                    If you wish to:
                   </p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li>Access and review your personal information</li>
-                    <li>Correct inaccurate or incomplete information</li>
-                    <li>Request deletion of your personal information</li>
-                    <li>Opt-out of marketing communications</li>
-                    <li>Withdraw consent for data processing</li>
-                    <li>Request data portability</li>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Update or delete your personal information</li>
+                    <li>Withdraw your consent</li>
+                    <li>Ask questions about our privacy practices</li>
                   </ul>
-                </div>
-
-                {/* Cookies */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Cookies and Tracking Technologies
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    We use cookies and similar tracking technologies to enhance
-                    your experience on our website. You can control cookie
-                    settings through your browser preferences. Please note that
-                    disabling cookies may affect the functionality of our
-                    services.
+                  <p className="text-gray-300 leading-relaxed mt-4">
+                    Please email us at{" "}
+                    <a
+                      href="mailto:issa@automerasystems.com"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      issa@automerasystems.com
+                    </a>
+                    .
                   </p>
-                </div>
-
-                {/* Third-Party Links */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Third-Party Links
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Our website may contain links to third-party websites. We
-                    are not responsible for the privacy practices or content of
-                    these external sites. We encourage you to review their
-                    privacy policies before providing any personal information.
-                  </p>
-                </div>
-
-                {/* Children's Privacy */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Children's Privacy
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Our services are not intended for children under the age of
-                    13. We do not knowingly collect personal information from
-                    children under 13. If you believe we have collected such
-                    information, please contact us immediately.
-                  </p>
-                </div>
-
-                {/* International Transfers */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    International Data Transfers
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Your information may be transferred to and processed in
-                    countries other than your own. We ensure that such transfers
-                    comply with applicable data protection laws and implement
-                    appropriate safeguards to protect your information.
-                  </p>
-                </div>
-
-                {/* Changes to Policy */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Changes to This Privacy Policy
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    We may update this Privacy Policy from time to time. We will
-                    notify you of any changes by posting the new Privacy Policy
-                    on this page and updating the "Last Updated" date. We
-                    encourage you to review this policy periodically.
-                  </p>
-                </div>
-
-                {/* Contact Information */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Contact Us
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed mb-4">
-                    If you have any questions about this Privacy Policy or our
-                    data practices, please contact us:
-                  </p>
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                    <p className="text-gray-300">
-                      <strong>Email:</strong> privacy@automera-systems.com
-                      <br />
-                      <strong>Address:</strong> Automera Systems, Privacy Team
-                      <br />
-                      <strong>Phone:</strong> +1 (555) 123-4567
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

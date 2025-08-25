@@ -52,41 +52,21 @@ export default function Terms() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
             {/* Logo Section */}
-            <div className="flex items-center space-x-3">
+            <a
+              href="/"
+              className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
               <div className="w-8 h-8 bg-[#fcc142] rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-[#284185] font-bold text-lg">A</span>
               </div>
               <span className="text-white font-bold text-lg tracking-tight">
                 Automera Systems
               </span>
-            </div>
+            </a>
 
-            {/* Centered Navigation Links */}
+            {/* Centered Navigation Links - Removed for secondary pages */}
             <div className="hidden md:flex space-x-8">
-              <a
-                href="/"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                Home
-              </a>
-              <a
-                href="/#features"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                Features
-              </a>
-              <a
-                href="/#about"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                About
-              </a>
-              <a
-                href="/#faq"
-                className="text-white hover:text-[#fcc142] transition-colors font-medium text-sm tracking-wide cursor-pointer"
-              >
-                FAQ
-              </a>
+              {/* Navigation links removed from secondary pages */}
             </div>
 
             {/* CTA Button */}
@@ -141,270 +121,191 @@ export default function Terms() {
                 {/* Last Updated */}
                 <div className="text-center pb-6 border-b border-white/20">
                   <p className="text-gray-300 text-sm">
-                    <strong>Last Updated:</strong> December 2024
-                  </p>
-                </div>
-
-                {/* Introduction */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Introduction
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    These Terms and Conditions ("Terms") govern your use of
-                    Automera Systems' AI receptionist services and website. By
-                    accessing or using our services, you agree to be bound by
-                    these Terms. If you disagree with any part of these terms,
-                    you may not access our services.
+                    <strong>Last Updated:</strong> August 2025
                   </p>
                 </div>
 
                 {/* Acceptance of Terms */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Acceptance of Terms
+                    1. Acceptance of Terms
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    By using our services, you confirm that you have read,
-                    understood, and agree to be bound by these Terms. You also
-                    confirm that you have the legal capacity to enter into these
-                    Terms and that you are at least 18 years old.
+                    By accessing our website, submitting your information, or
+                    using our services, you agree to be bound by these Terms of
+                    Service. If you do not agree to these terms, please do not
+                    use our website or services.
                   </p>
                 </div>
 
-                {/* Service Description */}
+                {/* Services Provided */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Service Description
+                    2. Services Provided
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    Automera Systems provides AI-powered receptionist services
+                    Automera Systems provides AI-powered automation solutions
                     including:
                   </p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li>Automated call answering and routing</li>
-                    <li>Appointment scheduling and management</li>
-                    <li>Customer inquiry handling</li>
-                    <li>24/7 availability and support</li>
-                    <li>Multi-language communication capabilities</li>
-                    <li>Integration with existing business systems</li>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>
+                      AI Receptionist (virtual call answering & appointment
+                      booking)
+                    </li>
+                    <li>AI Chatbot (multichannel customer support)</li>
+                    <li>
+                      Custom AI Automations (CRM integrations, workflow
+                      automations, and tailored business solutions)
+                    </li>
                   </ul>
+                  <p className="text-gray-300 leading-relaxed mt-4">
+                    All services are subject to availability and ongoing
+                    evaluation of client suitability.
+                  </p>
                 </div>
 
                 {/* User Responsibilities */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    User Responsibilities
+                    3. User Responsibilities
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    As a user of our services, you agree to:
+                    By using our services, you agree to:
                   </p>
-                  <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                    <li>Provide accurate and complete information</li>
-                    <li>Maintain the security of your account credentials</li>
-                    <li>Use the services only for lawful purposes</li>
-                    <li>Not attempt to reverse engineer or hack our systems</li>
-                    <li>Respect intellectual property rights</li>
-                    <li>Comply with all applicable laws and regulations</li>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
                     <li>
-                      Not use the services to transmit harmful or malicious
-                      content
+                      Provide accurate and truthful information when filling out
+                      forms
+                    </li>
+                    <li>
+                      Only use our services for lawful and ethical purposes
+                    </li>
+                    <li>
+                      Refrain from abusing, spamming, or attempting to exploit
+                      the systems provided
                     </li>
                   </ul>
                 </div>
 
-                {/* Payment Terms */}
+                {/* SMS Messaging & Communication */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Payment Terms
+                    4. SMS Messaging & Communication
                   </h2>
-                  <div className="space-y-4">
-                    <p className="text-gray-300 leading-relaxed">
-                      Our services are offered on a subscription basis with the
-                      following payment terms:
-                    </p>
-                    <ul className="list-disc list-inside text-gray-300 space-y-1 ml-4">
-                      <li>
-                        Subscription fees are billed in advance on a monthly or
-                        annual basis
-                      </li>
-                      <li>
-                        All fees are non-refundable unless otherwise specified
-                      </li>
-                      <li>
-                        We reserve the right to change pricing with 30 days
-                        notice
-                      </li>
-                      <li>Late payments may result in service suspension</li>
-                      <li>
-                        Free consultations are limited to one per business
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Service Availability */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Service Availability
-                  </h2>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    By submitting your phone number through our forms or
+                    website, you consent to receive SMS messages from Automera
+                    Systems related to:
+                  </p>
+                  <ul className="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Appointment reminders</li>
+                    <li>Consultation follow-ups</li>
+                    <li>Service updates and inquiries</li>
+                  </ul>
+                  <p className="text-gray-300 leading-relaxed mb-2">
+                    Message frequency varies.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    Standard message and data rates may apply.
+                  </p>
                   <p className="text-gray-300 leading-relaxed">
-                    While we strive to provide 24/7 service availability, we do
-                    not guarantee uninterrupted service. Our services may be
-                    temporarily unavailable due to maintenance, updates, or
-                    technical issues. We will make reasonable efforts to
-                    minimize downtime and provide advance notice when possible.
+                    You can opt out at any time by replying STOP to any message.
+                    For assistance, reply HELP or email us at{" "}
+                    <a
+                      href="mailto:issa@automerasystems.com"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      issa@automerasystems.com
+                    </a>
+                    .
                   </p>
                 </div>
 
-                {/* Data and Privacy */}
+                {/* Third-Party Tools */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Data and Privacy
+                    5. Third-Party Tools
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    Your privacy is important to us. Our collection and use of
-                    personal information is governed by our Privacy Policy,
-                    which is incorporated into these Terms by reference. By
-                    using our services, you consent to the collection and use of
-                    information as described in our Privacy Policy.
+                    We may use third-party tools such as GoHighLevel CRM or
+                    automation platforms (Make.com, n8n, etc.) to manage
+                    communication and service delivery. Your information is
+                    stored securely and used solely for the purposes outlined in
+                    our{" "}
+                    <a
+                      href="/privacy"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
                   </p>
                 </div>
 
-                {/* Intellectual Property */}
+                {/* Data Protection */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Intellectual Property
+                    6. Data Protection
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    All content, features, and functionality of our services,
-                    including but not limited to text, graphics, logos,
-                    software, and designs, are owned by Automera Systems and are
-                    protected by copyright, trademark, and other intellectual
-                    property laws. You may not reproduce, distribute, or create
-                    derivative works without our express written consent.
+                    We are committed to protecting your data. For full details
+                    on how your data is collected, used, and stored, please
+                    refer to our{" "}
+                    <a
+                      href="/privacy"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
                   </p>
                 </div>
 
                 {/* Limitation of Liability */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Limitation of Liability
+                    7. Limitation of Liability
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    To the maximum extent permitted by law, Automera Systems
-                    shall not be liable for any indirect, incidental, special,
-                    consequential, or punitive damages, including but not
-                    limited to loss of profits, data, or business opportunities.
-                    Our total liability shall not exceed the amount paid by you
-                    for our services in the 12 months preceding the claim.
+                    Automera Systems is not liable for any indirect, incidental,
+                    or consequential damages resulting from the use of our
+                    services. Results may vary, and no guarantees are implied
+                    unless stated in a specific service agreement.
                   </p>
                 </div>
 
-                {/* Disclaimers */}
+                {/* Modifications */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Disclaimers
+                    8. Modifications
                   </h2>
                   <p className="text-gray-300 leading-relaxed">
-                    Our services are provided "as is" and "as available" without
-                    warranties of any kind. We disclaim all warranties, express
-                    or implied, including but not limited to warranties of
-                    merchantability, fitness for a particular purpose, and
-                    non-infringement. We do not warrant that our services will
-                    be error-free or uninterrupted.
-                  </p>
-                </div>
-
-                {/* Termination */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Termination
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Either party may terminate these Terms at any time with
-                    written notice. Upon termination, your access to our
-                    services will cease immediately. We may terminate your
-                    access immediately if you violate these Terms. Provisions
-                    relating to intellectual property, liability, and dispute
-                    resolution shall survive termination.
+                    We reserve the right to update or modify these terms at any
+                    time. Any changes will be posted on this page with an
+                    updated effective date.
                   </p>
                 </div>
 
                 {/* Governing Law */}
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    Governing Law and Dispute Resolution
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    These Terms shall be governed by and construed in accordance
-                    with the laws of the jurisdiction where Automera Systems is
-                    incorporated. Any disputes arising from these Terms shall be
-                    resolved through binding arbitration in accordance with the
-                    rules of the American Arbitration Association.
-                  </p>
-                </div>
-
-                {/* Changes to Terms */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Changes to Terms
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    We reserve the right to modify these Terms at any time. We
-                    will notify users of any material changes by posting the
-                    updated Terms on our website and updating the "Last Updated"
-                    date. Your continued use of our services after such changes
-                    constitutes acceptance of the new Terms.
-                  </p>
-                </div>
-
-                {/* Severability */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Severability
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    If any provision of these Terms is found to be unenforceable
-                    or invalid, that provision will be limited or eliminated to
-                    the minimum extent necessary so that these Terms will
-                    otherwise remain in full force and effect and enforceable.
-                  </p>
-                </div>
-
-                {/* Entire Agreement */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Entire Agreement
-                  </h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    These Terms, together with our Privacy Policy and any other
-                    agreements referenced herein, constitute the entire
-                    agreement between you and Automera Systems regarding the use
-                    of our services and supersede all prior agreements and
-                    understandings.
-                  </p>
-                </div>
-
-                {/* Contact Information */}
-                <div>
-                  <h2 className="text-2xl font-bold text-white mb-4">
-                    Contact Information
+                    9. Governing Law
                   </h2>
                   <p className="text-gray-300 leading-relaxed mb-4">
-                    If you have any questions about these Terms and Conditions,
-                    please contact us:
+                    These terms shall be governed by and interpreted in
+                    accordance with the laws of Lebanon.
                   </p>
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                    <p className="text-gray-300">
-                      <strong>Email:</strong> legal@automera-systems.com
-                      <br />
-                      <strong>Address:</strong> Automera Systems, Legal
-                      Department
-                      <br />
-                      <strong>Phone:</strong> +1 (555) 123-4567
-                    </p>
-                  </div>
+                  <p className="text-gray-300 leading-relaxed">
+                    If you have any questions about these terms, please contact
+                    us at{" "}
+                    <a
+                      href="mailto:issa@automerasystems.com"
+                      className="text-[#fcc142] hover:underline"
+                    >
+                      issa@automerasystems.com
+                    </a>
+                    .
+                  </p>
                 </div>
               </div>
             </div>
