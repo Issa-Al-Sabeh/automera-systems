@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
       <select
         value={locale}
         onChange={(e) => setLocale(e.target.value as "en" | "it" | "de")}
-        className="appearance-none bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300 cursor-pointer"
+        className="appearance-none bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300 cursor-pointer"
       >
         {languages.map((lang) => (
           <option

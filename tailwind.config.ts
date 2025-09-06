@@ -8,6 +8,27 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#151721",
+        secondary: "#5F67B0",
+        tertiary: "#C3E5D9",
+      },
+      fontFamily: {
+        sans: [
+          "Montserrat",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        display: [
+          "Atelier",
+          "Montserrat",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+      },
       animation: {
         "infinite-scroll": "infinite-scroll 30s linear infinite",
       },

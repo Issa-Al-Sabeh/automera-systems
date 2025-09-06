@@ -7,6 +7,7 @@ import LanguageSwitcher from "../../components/LanguageSwitcher";
 export default function Contact() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +21,21 @@ export default function Contact() {
     "idle" | "success" | "error"
   >("idle");
 
+  const openMobileMenu = () => {
+    setMobileMenuOpen(true);
+    // Small delay to ensure the element is rendered before starting animation
+    setTimeout(() => setIsAnimating(true), 10);
+  };
+
+  const closeMobileMenu = () => {
+    setIsAnimating(true);
+    // Delay the state change to allow exit animation to complete
+    setTimeout(() => {
+      setMobileMenuOpen(false);
+      setIsAnimating(false);
+    }, 300);
+  };
+
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -27,7 +43,7 @@ export default function Contact() {
         mobileMenuOpen &&
         !(event.target as Element).closest(".mobile-menu")
       ) {
-        setMobileMenuOpen(false);
+        closeMobileMenu();
       }
     };
 
@@ -120,20 +136,20 @@ export default function Contact() {
           width: 8px !important;
         }
         #businessCountry::-webkit-scrollbar-track {
-          background: #284185 !important;
+          background: #151721 !important;
         }
         #businessCountry::-webkit-scrollbar-thumb {
-          background: #fcc142 !important;
+          background: #c3e5d9 !important;
           border-radius: 9999px !important;
         }
       `}</style>
-      <div className="min-h-screen bg-[#284185] relative overflow-hidden font-sans">
+      <div className="min-h-screen bg-primary relative overflow-hidden font-sans">
         {/* Tech Pattern Background */}
         <div className="absolute inset-0 opacity-5">
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fcc142' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='60' cy='0' r='2'/%3E%3Ccircle cx='0' cy='60' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C3E5D9' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='0' cy='0' r='2'/%3E%3Ccircle cx='60' cy='0' r='2'/%3E%3Ccircle cx='0' cy='60' r='2'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               backgroundSize: "60px 60px",
             }}
           ></div>
@@ -142,32 +158,32 @@ export default function Contact() {
         {/* Extended Geometric Background Shapes */}
         <div className="absolute inset-0">
           {/* Large Blue Triangle - Top Right */}
-          <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-[#284185] to-[#777cb8] transform rotate-45 opacity-80"></div>
+          <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-primary to-secondary transform rotate-45 opacity-80"></div>
 
           {/* Medium Blue Shape - Bottom Left */}
-          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-[#777cb8] to-[#284185] transform -rotate-12 opacity-60"></div>
+          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-secondary to-primary transform -rotate-12 opacity-60"></div>
 
           {/* Small Accent Shape - Top Left */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-[#fcc142] transform rotate-45 opacity-20"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-tertiary transform rotate-45 opacity-20"></div>
 
           {/* Additional Geometric Shapes Throughout */}
-          <div className="absolute top-1/2 right-10 w-64 h-64 bg-gradient-to-br from-[#777cb8] to-[#284185] transform rotate-12 opacity-40"></div>
-          <div className="absolute top-3/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-[#284185] to-[#777cb8] transform -rotate-45 opacity-30"></div>
-          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-[#fcc142] transform rotate-30 opacity-15"></div>
-          <div className="absolute top-1/4 left-1/2 w-24 h-24 bg-gradient-to-r from-[#777cb8] to-[#fcc142] transform -rotate-12 opacity-25"></div>
+          <div className="absolute top-1/2 right-10 w-64 h-64 bg-gradient-to-br from-secondary to-primary transform rotate-12 opacity-40"></div>
+          <div className="absolute top-3/4 left-1/4 w-48 h-48 bg-gradient-to-tr from-primary to-secondary transform -rotate-45 opacity-30"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-tertiary transform rotate-30 opacity-15"></div>
+          <div className="absolute top-1/4 left-1/2 w-24 h-24 bg-gradient-to-r from-secondary to-tertiary transform -rotate-12 opacity-25"></div>
 
           {/* Floating Elements */}
-          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-[#fcc142]/30 rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-tertiary/30 rounded-full animate-pulse"></div>
           <div
-            className="absolute bottom-1/3 left-1/4 w-12 h-12 bg-[#777cb8]/40 rounded-full animate-pulse"
+            className="absolute bottom-1/3 left-1/4 w-12 h-12 bg-secondary/40 rounded-full animate-pulse"
             style={{ animationDelay: "1s" }}
           ></div>
           <div
-            className="absolute top-2/3 right-1/3 w-8 h-8 bg-[#fcc142]/50 rounded-full animate-pulse"
+            className="absolute top-2/3 right-1/3 w-8 h-8 bg-tertiary/50 rounded-full animate-pulse"
             style={{ animationDelay: "2s" }}
           ></div>
           <div
-            className="absolute bottom-1/2 left-1/6 w-20 h-20 bg-[#777cb8]/20 rounded-full animate-pulse"
+            className="absolute bottom-1/2 left-1/6 w-20 h-20 bg-secondary/20 rounded-full animate-pulse"
             style={{ animationDelay: "0.5s" }}
           ></div>
         </div>
@@ -181,12 +197,11 @@ export default function Contact() {
                 href="/"
                 className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
               >
-                <div className="w-8 h-8 bg-[#fcc142] rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-[#284185] font-bold text-lg">A</span>
-                </div>
-                <span className="text-white font-bold text-lg tracking-tight">
-                  Automera Systems
-                </span>
+                <img
+                  src="/logo.png"
+                  alt="Automera Systems"
+                  className="h-8 w-auto"
+                />
               </a>
 
               {/* Centered Navigation Links - Removed for secondary pages */}
@@ -199,7 +214,7 @@ export default function Contact() {
                 <LanguageSwitcher />
                 <a
                   href="/"
-                  className="bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
+                  className="bg-tertiary hover:bg-tertiary/90 text-primary px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
                 >
                   {t("nav.home")}
                 </a>
@@ -207,8 +222,8 @@ export default function Contact() {
 
               {/* Mobile Menu Button */}
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-white p-2 hover:text-[#fcc142] transition-colors"
+                onClick={openMobileMenu}
+                className="md:hidden text-white p-2 hover:text-tertiary transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -230,15 +245,25 @@ export default function Contact() {
 
         {/* Mobile Menu Drawer */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm">
-            <div className="mobile-menu fixed right-0 top-0 h-full w-80 bg-[#284185] shadow-2xl transform transition-transform duration-300 ease-in-out">
+          <div
+            className={`md:hidden fixed inset-0 z-40 mobile-menu-backdrop transition-all duration-300 ease-in-out ${
+              isAnimating
+                ? "bg-black/50 backdrop-blur-sm"
+                : "bg-black/0 backdrop-blur-0"
+            }`}
+          >
+            <div
+              className={`mobile-menu fixed right-0 top-0 h-full w-80 bg-primary shadow-2xl transform transition-all duration-300 ease-in-out ${
+                isAnimating ? "translate-x-0" : "translate-x-full"
+              }`}
+            >
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/20">
                   <span className="text-white font-bold text-lg">Menu</span>
                   <button
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-white hover:text-[#fcc142] transition-colors p-2"
+                    onClick={closeMobileMenu}
+                    className="text-white hover:text-tertiary transition-colors p-2"
                   >
                     <svg
                       className="w-6 h-6"
@@ -260,29 +285,29 @@ export default function Contact() {
                 <div className="flex-1 p-6 space-y-4">
                   <a
                     href="/"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                    onClick={closeMobileMenu}
+                    className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     {t("nav.home")}
                   </a>
                   <a
                     href="/contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                    onClick={closeMobileMenu}
+                    className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     Contact Us
                   </a>
                   <a
                     href="/privacy"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                    onClick={closeMobileMenu}
+                    className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     Privacy Policy
                   </a>
                   <a
                     href="/terms"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block text-white hover:text-[#fcc142] transition-colors font-medium text-lg py-3 border-b border-white/10"
+                    onClick={closeMobileMenu}
+                    className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     Terms and Conditions
                   </a>
@@ -305,12 +330,12 @@ export default function Contact() {
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-6 leading-none font-display">
                 {t("contact.title")}
               </h1>
 
               {/* Subheadline */}
-              <p className="text-sm md:text-base text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-sm md:text-base lg:text-lg text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
                 {t("contact.subtitle")}
               </p>
             </div>
@@ -335,7 +360,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       suppressHydrationWarning
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300"
                       placeholder={t("contact.form.placeholders.fullName")}
                     />
                   </div>
@@ -356,7 +381,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       suppressHydrationWarning
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300"
                       placeholder={t("contact.form.placeholders.email")}
                     />
                   </div>
@@ -376,7 +401,7 @@ export default function Contact() {
                       value={formData.company}
                       onChange={handleInputChange}
                       suppressHydrationWarning
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300"
                       placeholder={t("contact.form.placeholders.company")}
                     />
                   </div>
@@ -396,7 +421,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       suppressHydrationWarning
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300"
                       placeholder={t("contact.form.placeholders.phone")}
                     />
                   </div>
@@ -416,7 +441,7 @@ export default function Contact() {
                     value={formData.businessCountry}
                     onChange={handleInputChange}
                     suppressHydrationWarning
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300 [&>option]:bg-[#284185] [&>option]:text-white [&>option]:py-2 [&>option]:px-3 [&>option]:border-b [&>option]:border-white/10 [&>option]:hover:bg-[#777cb8] [&>option]:hover:text-[#fcc142] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#284185] [&::-webkit-scrollbar-thumb]:bg-[#fcc142] [&::-webkit-scrollbar-thumb]:rounded-full"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300 [&>option]:bg-primary [&>option]:text-white [&>option]:py-2 [&>option]:px-3 [&>option]:border-b [&>option]:border-white/10 [&>option]:hover:bg-secondary [&>option]:hover:text-tertiary [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-primary [&::-webkit-scrollbar-thumb]:bg-tertiary [&::-webkit-scrollbar-thumb]:rounded-full"
                   >
                     <option value="Australia">Australia</option>
                     <option value="Austria">Austria</option>
@@ -472,7 +497,7 @@ export default function Contact() {
                     required
                     rows={4}
                     suppressHydrationWarning
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#fcc142] focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:border-transparent transition-all duration-300 resize-none"
                     placeholder={t("contact.form.placeholders.message")}
                   />
                 </div>
@@ -485,7 +510,7 @@ export default function Contact() {
                     className={`px-12 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center mx-auto ${
                       isSubmitting
                         ? "bg-gray-400 text-gray-600 cursor-not-allowed"
-                        : "bg-[#fcc142] hover:bg-[#fcc142]/90 text-[#284185] hover:shadow-[#fcc142]/30"
+                        : "bg-tertiary hover:bg-tertiary/90 text-primary hover:shadow-tertiary/30"
                     }`}
                   >
                     {isSubmitting ? (

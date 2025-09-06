@@ -182,7 +182,7 @@
       "title": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
       "subtitle": "Wenn das Problem weiterhin besteht, kontaktieren Sie uns bitte direkt."
     },
-    "agreement": "Durch das Absenden dieses Formulars stimmen Sie unserer <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Datenschutzerklärung</a> und den <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Nutzungsbedingungen</a> zu"
+    "agreement": "Durch das Absenden dieses Formulars stimmen Sie unserer <a href=\"/privacy\" class=\"text-[tertiary] hover:text-[tertiary]/80 underline transition-colors\">Datenschutzerklärung</a> und den <a href=\"/terms\" class=\"text-[tertiary] hover:text-[tertiary]/80 underline transition-colors\">Nutzungsbedingungen</a> zu"
   },
   "privacy": {
     "title": "Datenschutzerklärung",
@@ -210,7 +210,7 @@
       "sms": {
         "title": "3. SMS-Nachrichten & Einverständnis",
         "description": "Durch das Absenden Ihrer Informationen stimmen Sie zu, SMS-Nachrichten von Automera Systems zu erhalten, die sich auf Terminbestätigungen, Terminplanungshilfe und allgemeine Anfragen beziehen.",
-        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede SMS antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede SMS antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       },
       "share": {
         "title": "4. Wie Wir Ihre Informationen Teilen",
@@ -229,7 +229,7 @@
           "1": "Ihr Einverständnis widerrufen",
           "2": "Fragen zu unseren Datenschutzpraktiken stellen"
         },
-        "contact": "Senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "Senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Zurück zum Kontaktformular"
@@ -286,7 +286,7 @@
           "Beratungs-Nachverfolgung",
           "Service-Updates und Anfragen"
         ],
-        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede Nachricht antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "Die Nachrichtenhäufigkeit variiert. Es können Standard-Nachrichten- und Datenraten gelten. Sie können jederzeit kündigen, indem Sie STOP auf jede Nachricht antworten. Für Hilfe antworten Sie HELP oder senden Sie uns eine E-Mail an <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       },
       "thirdParty": {
         "title": "5. Drittanbieter-Tools",
@@ -294,7 +294,7 @@
       },
       "dataProtection": {
         "title": "6. Datenschutz",
-        "description": "Wir setzen uns für den Schutz Ihrer Daten ein. Für vollständige Details darüber, wie Ihre Daten gesammelt, verwendet und gespeichert werden, verweisen wir auf unsere <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Datenschutzerklärung</a>."
+        "description": "Wir setzen uns für den Schutz Ihrer Daten ein. Für vollständige Details darüber, wie Ihre Daten gesammelt, verwendet und gespeichert werden, verweisen wir auf unsere <a href=\"/privacy\" class=\"text-[tertiary] hover:underline\">Datenschutzerklärung</a>."
       },
       "liability": {
         "title": "7. Haftungsbeschränkung",
@@ -307,7 +307,7 @@
       "governingLaw": {
         "title": "9. Geltendes Recht",
         "description": "Diese Bedingungen unterliegen den Gesetzen des Libanon und werden in Übereinstimmung mit diesen ausgelegt.",
-        "contact": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Zurück zum Kontaktformular"

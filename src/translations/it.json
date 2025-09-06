@@ -182,7 +182,7 @@
       "title": "Qualcosa è andato storto. Riprova.",
       "subtitle": "Se il problema persiste, contattaci direttamente."
     },
-    "agreement": "Inviando questo modulo, accetti la nostra <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Informativa sulla Privacy</a> e i <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Termini di Servizio</a>"
+    "agreement": "Inviando questo modulo, accetti la nostra <a href=\"/privacy\" class=\"text-[tertiary] hover:text-[tertiary]/80 underline transition-colors\">Informativa sulla Privacy</a> e i <a href=\"/terms\" class=\"text-[tertiary] hover:text-[tertiary]/80 underline transition-colors\">Termini di Servizio</a>"
   },
   "privacy": {
     "title": "Informativa sulla Privacy",
@@ -210,7 +210,7 @@
       "sms": {
         "title": "3. Messaggi SMS e Consenso",
         "description": "Inviando le tue informazioni, acconsenti a ricevere messaggi SMS da Automera Systems relativi a conferme di appuntamenti, assistenza per la programmazione e richieste generali.",
-        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi SMS. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi SMS. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       },
       "share": {
         "title": "4. Come Condividiamo le Tue Informazioni",
@@ -229,7 +229,7 @@
           "1": "Ritirare il tuo consenso",
           "2": "Porre domande sulle nostre pratiche di privacy"
         },
-        "contact": "Inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "Inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Torna al Modulo di Contatto"
@@ -286,7 +286,7 @@
           "Follow-up consulenze",
           "Aggiornamenti servizi e richieste"
         ],
-        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi messaggio. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "La frequenza dei messaggi varia. Potrebbero applicarsi tariffe standard per messaggi e dati. Puoi rinunciare in qualsiasi momento rispondendo STOP a qualsiasi messaggio. Per assistenza, rispondi HELP o inviaci un'email a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       },
       "thirdParty": {
         "title": "5. Strumenti di Terze Parti",
@@ -294,7 +294,7 @@
       },
       "dataProtection": {
         "title": "6. Protezione dei Dati",
-        "description": "Ci impegniamo a proteggere i tuoi dati. Per dettagli completi su come i tuoi dati vengono raccolti, utilizzati e memorizzati, consulta la nostra <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Informativa sulla Privacy</a>."
+        "description": "Ci impegniamo a proteggere i tuoi dati. Per dettagli completi su come i tuoi dati vengono raccolti, utilizzati e memorizzati, consulta la nostra <a href=\"/privacy\" class=\"text-[tertiary] hover:underline\">Informativa sulla Privacy</a>."
       },
       "liability": {
         "title": "7. Limitazione di Responsabilità",
@@ -307,7 +307,7 @@
       "governingLaw": {
         "title": "9. Legge Applicabile",
         "description": "Questi termini saranno regolati e interpretati in conformità con le leggi del Libano.",
-        "contact": "Se hai domande su questi termini, contattaci a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "Se hai domande su questi termini, contattaci a <a href=\"mailto:issa@automerasystems.com\" class=\"text-[tertiary] hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Torna al Modulo di Contatto"

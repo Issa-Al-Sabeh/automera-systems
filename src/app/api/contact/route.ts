@@ -34,21 +34,21 @@ This email was sent from the Automera Systems contact form.
       `,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #284185; border-bottom: 3px solid #fcc142; padding-bottom: 10px;">
+          <h2 style="color: #151721; border-bottom: 3px solid #c3e5d9; padding-bottom: 10px;">
             New Consultation Request - Automera Systems
           </h2>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #284185; margin-top: 0;">Contact Information</h3>
+            <h3 style="color: #151721; margin-top: 0;">Contact Information</h3>
             <p><strong>Full Name:</strong> ${formData.name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${formData.email}" style="color: #fcc142;">${formData.email}</a></p>
+            <p><strong>Email:</strong> <a href="mailto:${formData.email}" style="color: #c3e5d9;">${formData.email}</a></p>
             <p><strong>Company:</strong> ${formData.company}</p>
             <p><strong>Phone:</strong> ${formData.phone}</p>
             <p><strong>Business Country:</strong> ${formData.businessCountry}</p>
           </div>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #284185; margin-top: 0;">Message</h3>
+            <h3 style="color: #151721; margin-top: 0;">Message</h3>
             <p style="white-space: pre-wrap;">${formData.message}</p>
           </div>
           

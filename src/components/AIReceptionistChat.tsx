@@ -79,7 +79,7 @@ const AIReceptionistChat: React.FC = () => {
       {/* Header */}
       <div className="bg-blue-800 p-4 border-b border-blue-700">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-tertiary rounded-full flex items-center justify-center">
             <svg
               className="w-6 h-6 text-white"
               fill="none"
@@ -96,7 +96,7 @@ const AIReceptionistChat: React.FC = () => {
           </div>
           <div>
             <h3 className="text-white font-bold text-lg">{t("chat.title")}</h3>
-            <p className="text-yellow-400 text-sm">{t("chat.status")}</p>
+            <p className="text-tertiary text-sm">{t("chat.status")}</p>
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ const AIReceptionistChat: React.FC = () => {
       {showConfirmation && (
         <div className="bg-blue-800 p-3 border-t border-blue-700">
           <div className="flex items-center space-x-2">
-            <div className="w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+            <div className="w-5 h-5 bg-tertiary rounded-full flex items-center justify-center">
               <svg
                 className="w-3 h-3 text-blue-900"
                 fill="currentColor"
@@ -140,7 +140,7 @@ const AIReceptionistChat: React.FC = () => {
                 />
               </svg>
             </div>
-            <span className="text-yellow-400 text-sm font-medium">
+            <span className="text-tertiary text-sm font-medium">
               {t("chat.confirmation")}
             </span>
           </div>
@@ -156,11 +156,11 @@ const AIReceptionistChat: React.FC = () => {
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder={t("chat.inputPlaceholder")}
-            className="flex-1 px-4 py-2 bg-blue-700 text-white placeholder-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="flex-1 px-4 py-2 bg-blue-700 text-white placeholder-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-tertiary"
           />
           <button
             onClick={handleSendMessage}
-            className="px-4 py-2 bg-yellow-400 text-blue-900 font-semibold rounded-full hover:bg-yellow-300 transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-300"
+            className="px-4 py-2 bg-tertiary text-primary font-semibold rounded-full hover:bg-tertiary/80 transition-colors focus:outline-none focus:ring-2 focus:ring-tertiary/50"
           >
             {t("chat.sendButton")}
           </button>

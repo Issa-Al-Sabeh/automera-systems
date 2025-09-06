@@ -182,7 +182,7 @@
       "title": "Something went wrong. Please try again.",
       "subtitle": "If the problem persists, please contact us directly."
     },
-    "agreement": "By submitting this form, you agree to our <a href=\"/privacy\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Privacy Policy</a> and <a href=\"/terms\" class=\"text-[#fcc142] hover:text-[#fcc142]/80 underline transition-colors\">Terms of Service</a>"
+    "agreement": "By submitting this form, you agree to our <a href=\"/privacy\" class=\"text-tertiary hover:text-tertiary/80 underline transition-colors\">Privacy Policy</a> and <a href=\"/terms\" class=\"text-tertiary hover:text-tertiary/80 underline transition-colors\">Terms of Service</a>"
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -210,7 +210,7 @@
       "sms": {
         "title": "3. Text Messaging & Consent",
         "description": "By submitting your information, you consent to receive SMS messages from Automera Systems related to appointment confirmations, scheduling assistance, and general inquiries.",
-        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any SMS. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any SMS. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-tertiary hover:underline\">issa@automerasystems.com</a>."
       },
       "share": {
         "title": "4. How We Share Your Information",
@@ -229,7 +229,7 @@
           "1": "Withdraw your consent",
           "2": "Ask questions about our privacy practices"
         },
-        "contact": "Please email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "Please email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-tertiary hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Back to Contact Form"
@@ -286,7 +286,7 @@
           "Consultation follow-ups",
           "Service updates and inquiries"
         ],
-        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any message. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "additional": "Message frequency varies. Standard message and data rates may apply. You can opt out at any time by replying STOP to any message. For assistance, reply HELP or email us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-tertiary hover:underline\">issa@automerasystems.com</a>."
       },
       "thirdParty": {
         "title": "5. Third-Party Tools",
@@ -294,7 +294,7 @@
       },
       "dataProtection": {
         "title": "6. Data Protection",
-        "description": "We are committed to protecting your data. For full details on how your data is collected, used, and stored, please refer to our <a href=\"/privacy\" class=\"text-[#fcc142] hover:underline\">Privacy Policy</a>."
+        "description": "We are committed to protecting your data. For full details on how your data is collected, used, and stored, please refer to our <a href=\"/privacy\" class=\"text-tertiary hover:underline\">Privacy Policy</a>."
       },
       "liability": {
         "title": "7. Limitation of Liability",
@@ -307,7 +307,7 @@
       "governingLaw": {
         "title": "9. Governing Law",
         "description": "These terms shall be governed by and interpreted in accordance with the laws of Lebanon.",
-        "contact": "If you have any questions about these terms, please contact us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-[#fcc142] hover:underline\">issa@automerasystems.com</a>."
+        "contact": "If you have any questions about these terms, please contact us at <a href=\"mailto:issa@automerasystems.com\" class=\"text-tertiary hover:underline\">issa@automerasystems.com</a>."
       }
     },
     "backToContact": "Back to Contact Form"
