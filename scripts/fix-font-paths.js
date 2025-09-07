@@ -7,6 +7,8 @@ const cssFiles = glob.sync('out/**/*.css');
 
 console.log(`Found ${cssFiles.length} CSS files to process`);
 
+let updatedFiles = 0;
+
 cssFiles.forEach(cssFile => {
   try {
     const cssContent = fs.readFileSync(cssFile, 'utf8');
@@ -20,11 +22,12 @@ cssFiles.forEach(cssFile => {
     // Only write if there were changes
     if (updatedCss !== cssContent) {
       fs.writeFileSync(cssFile, updatedCss);
-      console.log(`Updated font paths in ${cssFile}`);
+      console.log(`Updated font paths in: ${cssFile}`);
+      updatedFiles++;
     }
   } catch (error) {
     console.error(`Error processing ${cssFile}:`, error.message);
   }
 });
 
-console.log('Font paths updated for GitHub Pages deployment');
+console.log(`Font paths updated for GitHub Pages deployment. Updated ${updatedFiles} files.`);
