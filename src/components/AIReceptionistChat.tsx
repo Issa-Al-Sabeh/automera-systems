@@ -11,7 +11,7 @@ interface Message {
 }
 
 const AIReceptionistChat: React.FC = () => {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -26,7 +26,7 @@ const AIReceptionistChat: React.FC = () => {
       timestamp: new Date(),
     };
     setMessages([initialMessage]);
-  }, [language, t]);
+  }, [t]);
 
   const handleSendMessage = () => {
     if (!inputValue.trim()) return;

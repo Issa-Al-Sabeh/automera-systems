@@ -21,7 +21,7 @@ interface LanguageContextType {
   setLocale: (locale: Locale) => void;
   t: (key: string) => string;
   tArray: (key: string) => string[];
-  tObject: (key: string) => Record<string, any>;
+  tObject: (key: string) => Record<string, unknown>;
 }
 
 const translations: Record<Locale, Translations> = {
@@ -53,11 +53,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // Translation function for simple strings
   const t = (key: string): string => {
     const keys = key.split(".");
-    let value: any = translations[locale];
+    let value: unknown = translations[locale];
 
     for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = value[k];
+      if (value && typeof value === "object" && value !== null && k in value) {
+        value = (value as Record<string, unknown>)[k];
       } else {
         return key; // Return key if translation not found
       }
@@ -69,11 +69,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   // Translation function for arrays
   const tArray = (key: string): string[] => {
     const keys = key.split(".");
-    let value: any = translations[locale];
+    let value: unknown = translations[locale];
 
     for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = value[k];
+      if (value && typeof value === "object" && value !== null && k in value) {
+        value = (value as Record<string, unknown>)[k];
       } else {
         return []; // Return empty array if translation not found
       }
@@ -83,19 +83,21 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   // Translation function for objects
-  const tObject = (key: string): Record<string, any> => {
+  const tObject = (key: string): Record<string, unknown> => {
     const keys = key.split(".");
-    let value: any = translations[locale];
+    let value: unknown = translations[locale];
 
     for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = value[k];
+      if (value && typeof value === "object" && value !== null && k in value) {
+        value = (value as Record<string, unknown>)[k];
       } else {
         return {}; // Return empty object if translation not found
       }
     }
 
-    return typeof value === "object" && !Array.isArray(value) ? value : {};
+    return typeof value === "object" && value !== null && !Array.isArray(value)
+      ? (value as Record<string, unknown>)
+      : {};
   };
 
   const value: LanguageContextType = {

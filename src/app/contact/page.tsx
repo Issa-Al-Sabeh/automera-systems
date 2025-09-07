@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "../../contexts/LanguageContext";
 import LanguageSwitcher from "../../components/LanguageSwitcher";
 
@@ -193,16 +195,18 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-3">
               {/* Logo Section */}
-              <a
+              <Link
                 href="/"
                 className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
               >
-                <img
+                <Image
                   src="/logo.png"
                   alt="Automera Systems"
+                  width={32}
+                  height={32}
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
 
               {/* Centered Navigation Links - Removed for secondary pages */}
               <div className="hidden md:flex space-x-8">
@@ -212,12 +216,12 @@ export default function Contact() {
               {/* Right Side - Language Switcher and Home Button - Desktop Only */}
               <div className="hidden md:flex items-center space-x-4">
                 <LanguageSwitcher />
-                <a
+                <Link
                   href="/"
                   className="bg-tertiary hover:bg-tertiary/90 text-primary px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 inline-block"
                 >
                   {t("nav.home")}
-                </a>
+                </Link>
               </div>
 
               {/* Mobile Menu Button */}
@@ -283,13 +287,13 @@ export default function Contact() {
 
                 {/* Navigation Links */}
                 <div className="flex-1 p-6 space-y-4">
-                  <a
+                  <Link
                     href="/"
                     onClick={closeMobileMenu}
                     className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     {t("nav.home")}
-                  </a>
+                  </Link>
                   <a
                     href="/contact"
                     onClick={closeMobileMenu}

@@ -3,6 +3,8 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "../contexts/LanguageContext";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
@@ -206,6 +208,71 @@ export default function Home() {
             className="absolute bottom-1/6 right-1/5 w-10 h-10 bg-primary/40 rounded-full animate-pulse"
             style={{ animationDelay: "5s" }}
           ></div>
+
+          {/* Icon Background Elements */}
+          <div className="absolute top-1/2 left-10 w-32 h-32 opacity-10">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={128}
+              height={128}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute top-1/4 right-1/3 w-28 h-28 opacity-15 transform rotate-12">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={112}
+              height={112}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute bottom-1/3 left-1/3 w-24 h-24 opacity-20 transform -rotate-45">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={96}
+              height={96}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute top-3/4 right-1/4 w-26 h-26 opacity-12 transform rotate-30">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={104}
+              height={104}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute bottom-1/4 left-1/5 w-30 h-30 opacity-8 transform -rotate-12">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={120}
+              height={120}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute top-1/6 left-1/2 w-36 h-36 opacity-6 transform rotate-45">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={144}
+              height={144}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="absolute bottom-1/6 right-1/6 w-22 h-22 opacity-18 transform -rotate-30">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={88}
+              height={88}
+              className="w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         {/* Navigation */}
@@ -213,16 +280,18 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-3">
               {/* Logo Section */}
-              <a
+              <Link
                 href="/"
                 className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
               >
-                <img
+                <Image
                   src="/logo.png"
                   alt="Automera Systems"
+                  width={32}
+                  height={32}
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
 
               {/* Centered Navigation Links - Desktop Only */}
               <div className="hidden lg:flex space-x-4 xl:space-x-8">
@@ -332,13 +401,13 @@ export default function Home() {
 
                 {/* Navigation Links */}
                 <div className="flex-1 p-6 space-y-4">
-                  <a
+                  <Link
                     href="/"
                     onClick={closeMobileMenu}
                     className="block text-white hover:text-tertiary transition-colors font-medium text-lg py-3 border-b border-white/10"
                   >
                     {t("nav.home")}
-                  </a>
+                  </Link>
                   <a
                     href="/contact"
                     onClick={closeMobileMenu}
@@ -378,6 +447,17 @@ export default function Home() {
           id="home"
           className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
+          {/* Large Background Icon */}
+          <div className="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 w-[960px] h-[960px] opacity-15 z-0 rotate-12">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={960}
+              height={960}
+              className="w-full h-full object-contain"
+            />
+          </div>
+
           {/* Content Container */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
@@ -387,7 +467,7 @@ export default function Home() {
                 <div className="mb-8"></div>
 
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-6 leading-none font-display">
+                <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white mb-6 leading-none font-display">
                   {t("hero.title")}
                 </h1>
 
@@ -398,7 +478,7 @@ export default function Home() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                  <a
+                  <Link
                     href="/contact"
                     className="bg-tertiary hover:bg-tertiary/90 text-primary px-6 py-4 rounded-lg font-medium text-sm sm:text-base lg:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-tertiary/30 hover:scale-105 flex items-center justify-center whitespace-nowrap"
                   >
@@ -416,7 +496,7 @@ export default function Home() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                  </a>
+                  </Link>
                   <a
                     href="#ai-receptionist"
                     className="border-2 border-secondary hover:bg-secondary hover:text-white text-secondary px-6 py-4 rounded-lg font-medium text-sm sm:text-base lg:text-lg transition-all duration-300 hover:scale-105 inline-block whitespace-nowrap text-center"
@@ -426,42 +506,42 @@ export default function Home() {
                 </div>
 
                 {/* Status Indicators */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"></div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-tertiary/30 transition-all duration-300">
+                    <div className="w-4 h-4 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"></div>
                     <div className="min-w-0">
-                      <div className="text-white font-semibold text-xs lg:text-sm leading-tight">
+                      <div className="text-white font-semibold text-sm sm:text-base leading-tight">
                         {t("hero.status.aiActive")}
                       </div>
-                      <div className="text-gray-400 text-xs leading-tight">
+                      <div className="text-gray-400 text-xs sm:text-sm leading-tight">
                         {t("hero.status.readyToHelp")}
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-tertiary/30 transition-all duration-300">
                     <div
-                      className="w-3 h-3 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"
+                      className="w-4 h-4 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"
                       style={{ animationDelay: "0.5s" }}
                     ></div>
                     <div className="min-w-0">
-                      <div className="text-white font-semibold text-xs lg:text-sm leading-tight">
+                      <div className="text-white font-semibold text-sm sm:text-base leading-tight">
                         {t("hero.status.alwaysAvailable")}
                       </div>
-                      <div className="text-gray-400 text-xs leading-tight">
+                      <div className="text-gray-400 text-xs sm:text-sm leading-tight">
                         {t("hero.status.neverOffline")}
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover:border-tertiary/30 transition-all duration-300">
                     <div
-                      className="w-3 h-3 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"
+                      className="w-4 h-4 bg-tertiary rounded-full animate-pulse shadow-lg shadow-tertiary/50 flex-shrink-0"
                       style={{ animationDelay: "1s" }}
                     ></div>
                     <div className="min-w-0">
-                      <div className="text-white font-semibold text-xs lg:text-sm leading-tight">
+                      <div className="text-white font-semibold text-sm sm:text-base leading-tight">
                         {t("hero.status.multiLanguage")}
                       </div>
-                      <div className="text-gray-400 text-xs leading-tight">
+                      <div className="text-gray-400 text-xs sm:text-sm leading-tight">
                         {t("hero.status.globalSupport")}
                       </div>
                     </div>
@@ -667,6 +747,17 @@ export default function Home() {
 
         {/* Key Features */}
         <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 relative">
+          {/* Large Background Icon - Right Side */}
+          <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-[960px] h-[960px] opacity-15 z-0 -rotate-12">
+            <Image
+              src="/icon.png"
+              alt=""
+              width={960}
+              height={960}
+              className="w-full h-full object-contain"
+            />
+          </div>
+
           <div className="max-w-7xl mx-auto">
             {/* Section Divider */}
             <div className="w-24 h-1 bg-gradient-to-r from-tertiary to-secondary mx-auto mb-16"></div>
