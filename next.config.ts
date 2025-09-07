@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   },
   // GitHub Pages configuration
   basePath: process.env.NODE_ENV === "production" ? "/automera-systems" : "",
+  // Ensure CSS paths are handled correctly
+  assetPrefix: process.env.NODE_ENV === "production" ? "/automera-systems" : "",
 };
 
 export default nextConfig;
