@@ -6,8 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // GitHub Pages configuration - only set basePath, not assetPrefix
+  // GitHub Pages configuration
   basePath: process.env.NODE_ENV === "production" ? "/automera-systems" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/automera-systems" : "",
 };
 
 export default nextConfig;
