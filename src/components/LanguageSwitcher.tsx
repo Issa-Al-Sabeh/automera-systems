@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
           <option
             key={lang.code}
             value={lang.code}
-            className="bg-[#284185] text-white py-2 px-3"
+            className=" bg-[#284185] text-white py-2 px-3"
           >
             {lang.name}
           </option>
