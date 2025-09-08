@@ -338,25 +338,28 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* Mobile Menu Button */}
-              <button
-                onClick={openMobileMenu}
-                className="md:hidden text-white p-2 hover:text-tertiary transition-colors"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Mobile Language Switcher and Menu Button */}
+              <div className="md:hidden flex items-center space-x-2">
+                <LanguageSwitcher />
+                <button
+                  onClick={openMobileMenu}
+                  className="text-white p-2 hover:text-tertiary transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </nav>
@@ -431,12 +434,7 @@ export default function Home() {
                   </a>
                 </div>
 
-                {/* Bottom Section */}
-                <div className="p-6 border-t border-white/20">
-                  <div className="flex justify-center">
-                    <LanguageSwitcher />
-                  </div>
-                </div>
+                {/* Bottom Section - Removed language switcher as it's now in the top nav */}
               </div>
             </div>
           </div>
@@ -771,10 +769,10 @@ export default function Home() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-stretch">
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[220px] flex flex-col">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -789,7 +787,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.appointmentBooking.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -798,10 +796,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -816,7 +814,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.customTrained.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -825,10 +823,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[220px] flex flex-col">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -843,7 +841,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.multiLanguage.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -852,10 +850,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -870,7 +868,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.ultraHumanVoices.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -879,10 +877,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[220px] flex flex-col">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -897,7 +895,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.alwaysAvailable.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -906,10 +904,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-4 lg:mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -924,7 +922,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.smartFailover.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -933,7 +931,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[220px] flex flex-col">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <div className="w-14 h-14 bg-gradient-to-br from-tertiary/80 to-tertiary rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110">
@@ -951,7 +949,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.easyIntegrations.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
@@ -960,10 +958,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="group p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden">
+              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-gradient-to-br from-tertiary/80 to-tertiary rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110">
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
                     <svg
                       className="w-7 h-7 text-primary"
                       fill="none"
@@ -978,7 +976,7 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-2 lg:mb-3 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
                     {t("features.items.costSaving.title")}
                   </h3>
                   <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
