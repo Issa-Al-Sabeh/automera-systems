@@ -768,218 +768,210 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 items-stretch">
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+            <div className="space-y-6">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/10 to-primary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.appointmentBooking.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.appointmentBooking.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.customTrained.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.customTrained.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/10 to-primary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.multiLanguage.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.multiLanguage.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.ultraHumanVoices.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.ultraHumanVoices.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/10 to-primary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.alwaysAvailable.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.alwaysAvailable.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.smartFailover.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.smartFailover.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-primary/30 via-secondary/20 to-primary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-14 h-14 bg-gradient-to-br from-tertiary/80 to-tertiary rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-primary/20 via-secondary/10 to-primary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.easyIntegrations.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.easyIntegrations.description")}
                   </p>
                 </div>
               </div>
 
-              <div className="group p-4 lg:p-6 rounded-xl bg-gradient-to-br from-secondary/30 via-primary/20 to-secondary/30 border border-tertiary/40 hover:border-tertiary transition-all duration-500 hover:shadow-2xl hover:shadow-tertiary/20 hover:scale-105 backdrop-blur-sm relative overflow-hidden h-[180px] flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-r from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center mb-3 lg:mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                    <svg
-                      className="w-7 h-7 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm lg:text-base font-medium text-white mb-1 lg:mb-2 group-hover:text-tertiary transition-colors duration-300 font-display leading-tight flex-shrink-0">
+              <div className="group flex items-start space-x-4 p-6 rounded-xl bg-gradient-to-r from-secondary/20 via-primary/10 to-secondary/20 border border-tertiary/20 hover:border-tertiary/40 transition-all duration-300 hover:shadow-lg hover:shadow-tertiary/10">
+                <div className="w-12 h-12 bg-gradient-to-br from-tertiary to-tertiary/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-tertiary/30 transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium text-white mb-2 group-hover:text-tertiary transition-colors duration-300 font-display">
                     {t("features.items.costSaving.title")}
                   </h3>
-                  <p className="text-gray-300 text-xs lg:text-sm leading-relaxed flex-grow">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     {t("features.items.costSaving.description")}
                   </p>
                 </div>
@@ -1154,7 +1146,7 @@ export default function Home() {
               {/* FAQ Item 1 */}
               <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-tertiary/30 transition-all duration-300 overflow-hidden">
                 <button
-                  className="faq-question w-full p-4 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
+                  className="faq-question w-full p-3 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
                   onClick={() => toggleFAQ(0)}
                 >
                   <span className="text-left leading-tight">
@@ -1190,7 +1182,7 @@ export default function Home() {
               {/* FAQ Item 2 */}
               <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-tertiary/30 transition-all duration-300 overflow-hidden">
                 <button
-                  className="faq-question w-full p-4 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
+                  className="faq-question w-full p-3 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
                   onClick={() => toggleFAQ(1)}
                 >
                   <span className="text-left leading-tight">
@@ -1226,7 +1218,7 @@ export default function Home() {
               {/* FAQ Item 3 */}
               <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-tertiary/30 transition-all duration-300 overflow-hidden">
                 <button
-                  className="faq-question w-full p-4 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
+                  className="faq-question w-full p-3 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
                   onClick={() => toggleFAQ(2)}
                 >
                   <span className="text-left leading-tight">
@@ -1262,7 +1254,7 @@ export default function Home() {
               {/* FAQ Item 4 */}
               <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-tertiary/30 transition-all duration-300 overflow-hidden">
                 <button
-                  className="faq-question w-full p-4 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
+                  className="faq-question w-full p-3 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
                   onClick={() => toggleFAQ(3)}
                 >
                   <span className="text-left leading-tight">
@@ -1298,7 +1290,7 @@ export default function Home() {
               {/* FAQ Item 5 */}
               <div className="faq-item bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-tertiary/30 transition-all duration-300 overflow-hidden">
                 <button
-                  className="faq-question w-full p-4 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
+                  className="faq-question w-full p-3 lg:p-6 text-left cursor-pointer text-white font-semibold text-sm lg:text-lg hover:text-tertiary transition-colors duration-300 flex items-start lg:items-center justify-between gap-4"
                   onClick={() => toggleFAQ(4)}
                 >
                   <span className="text-left leading-tight">
