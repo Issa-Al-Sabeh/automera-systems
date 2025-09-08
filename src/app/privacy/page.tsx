@@ -242,7 +242,7 @@ export default function Privacy() {
           </div>
 
           {/* Privacy Policy Content */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+          <div className="md:bg-white/10 md:backdrop-blur-md md:border md:border-white/20 md:rounded-3xl md:p-8 md:shadow-2xl p-4">
             <div className="prose prose-invert max-w-none">
               <div className="space-y-8">
                 {/* Last Updated */}

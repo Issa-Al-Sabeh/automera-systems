@@ -345,7 +345,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 shadow-2xl">
+            <div className="md:bg-white/10 md:backdrop-blur-md md:border md:border-white/20 md:rounded-3xl md:p-8 md:shadow-2xl p-4">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
