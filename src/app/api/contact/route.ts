@@ -5,6 +5,21 @@ export async function POST(request: NextRequest) {
   try {
     const { to, subject, formData } = await request.json();
 
+    // Check if required environment variables are set
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.error(
+        "Missing email configuration: EMAIL_USER or EMAIL_PASS not set"
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "Email service not configured. Please contact the administrator.",
+        },
+        { status: 500 }
+      );
+    }
+
     // Create transporter for email service
     const transporter = nodemailer.createTransport({
       service: process.env.EMAIL_SERVICE || "gmail",
@@ -76,8 +91,24 @@ This email was sent from the Automera Systems contact form.
     });
   } catch (error) {
     console.error("Error processing contact form:", error);
+
+    // Provide more specific error messages
+    let errorMessage = "Failed to process form submission";
+
+    if (error instanceof Error) {
+      if (error.message.includes("Invalid login")) {
+        errorMessage =
+          "Email authentication failed. Please check email credentials.";
+      } else if (error.message.includes("Connection timeout")) {
+        errorMessage =
+          "Email service connection failed. Please try again later.";
+      } else if (error.message.includes("ENOTFOUND")) {
+        errorMessage = "Email service not found. Please check configuration.";
+      }
+    }
+
     return NextResponse.json(
-      { success: false, message: "Failed to process form submission" },
+      { success: false, message: errorMessage },
       { status: 500 }
     );
   }
