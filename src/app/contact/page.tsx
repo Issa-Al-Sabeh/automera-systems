@@ -70,24 +70,24 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
-      // Send form data to your email using the API endpoint
-      const response = await fetch("/api/contact", {
+      // Create FormData object for Formspree
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("company", formData.company || "Not provided");
+      formDataToSend.append("phone", formData.phone || "Not provided");
+      formDataToSend.append("businessCountry", formData.businessCountry);
+      formDataToSend.append("message", formData.message);
+      formDataToSend.append("_subject", "New Consultation Request - Automera Systems");
+      formDataToSend.append("_replyto", formData.email);
+
+      // Send to Formspree - REPLACE WITH YOUR ACTUAL FORMSPREE ENDPOINT
+      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
         method: "POST",
+        body: formDataToSend,
         headers: {
-          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify({
-          to: "issa@automerasystems.com",
-          subject: "New Consultation Request - Automera Systems",
-          formData: {
-            name: formData.name,
-            email: formData.email,
-            company: formData.company || "Not provided",
-            phone: formData.phone || "Not provided",
-            businessCountry: formData.businessCountry,
-            message: formData.message,
-          },
-        }),
       });
 
       if (response.ok) {
