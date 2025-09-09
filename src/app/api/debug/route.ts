@@ -6,12 +6,14 @@ export async function GET(request: NextRequest) {
     const envCheck = {
       SES_REGION: process.env.SES_REGION || "NOT SET",
       AWS_REGION: process.env.AWS_REGION || "NOT SET",
-      SES_FROM_EMAIL: process.env.SES_FROM_EMAIL || "NOT SET", 
+      SES_FROM_EMAIL: process.env.SES_FROM_EMAIL || "NOT SET",
       SES_TO_EMAIL: process.env.SES_TO_EMAIL || "NOT SET",
       SES_FROM: process.env.SES_FROM || "NOT SET",
       SES_TO: process.env.SES_TO || "NOT SET",
       SES_ACCESS_KEY_ID: process.env.SES_ACCESS_KEY_ID ? "SET" : "NOT SET",
-      SES_SECRET_ACCESS_KEY: process.env.SES_SECRET_ACCESS_KEY ? "SET" : "NOT SET",
+      SES_SECRET_ACCESS_KEY: process.env.SES_SECRET_ACCESS_KEY
+        ? "SET"
+        : "NOT SET",
     };
 
     return NextResponse.json({
