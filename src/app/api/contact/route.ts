@@ -3,7 +3,7 @@ import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 
 // Create SES client
 const sesClient = new SESClient({
-  region: process.env.SES_REGION || process.env.AWS_REGION || "eu-north-1",
+  region: process.env.SES_REGION || "eu-north-1",
   credentials: process.env.SES_ACCESS_KEY_ID && process.env.SES_SECRET_ACCESS_KEY
     ? {
         accessKeyId: process.env.SES_ACCESS_KEY_ID,
@@ -31,9 +31,10 @@ export async function POST(request: NextRequest) {
     // Debug logging
     console.log("Environment variables check:");
     console.log("SES_REGION:", process.env.SES_REGION);
-    console.log("AWS_REGION:", process.env.AWS_REGION);
     console.log("SES_FROM_EMAIL:", process.env.SES_FROM_EMAIL);
     console.log("SES_TO_EMAIL:", process.env.SES_TO_EMAIL);
+    console.log("SES_FROM:", process.env.SES_FROM);
+    console.log("SES_TO:", process.env.SES_TO);
     console.log("SES_ACCESS_KEY_ID:", process.env.SES_ACCESS_KEY_ID ? "SET" : "NOT SET");
     console.log("SES_SECRET_ACCESS_KEY:", process.env.SES_SECRET_ACCESS_KEY ? "SET" : "NOT SET");
 
@@ -43,8 +44,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if SES is configured
-    if (!process.env.SES_REGION && !process.env.AWS_REGION) {
-      console.error("Missing SES configuration: No region set");
+    if (!process.env.SES_REGION) {
+      console.error("Missing SES configuration: SES_REGION not set");
       return NextResponse.json(
         {
           success: false,
@@ -100,9 +101,9 @@ This email was sent from the Automera Systems contact form.
 
     // Prepare email parameters
     const emailParams = {
-      Source: process.env.SES_FROM_EMAIL || "issa.alsabeh@gmail.com",
+      Source: process.env.SES_FROM_EMAIL || process.env.SES_FROM || "issa.alsabeh@gmail.com",
       Destination: {
-        ToAddresses: [process.env.SES_TO_EMAIL || "issa@automerasystems.com"],
+        ToAddresses: [process.env.SES_TO_EMAIL || process.env.SES_TO || "issa@automerasystems.com"],
       },
       Message: {
         Subject: {
@@ -129,8 +130,8 @@ This email was sent from the Automera Systems contact form.
 
     console.log("Email sent successfully:", result.MessageId);
     console.log("Contact form submission received:");
-    console.log("To:", process.env.SES_TO_EMAIL || "issa@automerasystems.com");
-    console.log("From:", process.env.SES_FROM_EMAIL || "issa.alsabeh@gmail.com");
+    console.log("To:", process.env.SES_TO_EMAIL || process.env.SES_TO || "issa@automerasystems.com");
+    console.log("From:", process.env.SES_FROM_EMAIL || process.env.SES_FROM || "issa.alsabeh@gmail.com");
     console.log("Form Data:", { name, email, company, phone, businessCountry, message });
 
     return NextResponse.json({
