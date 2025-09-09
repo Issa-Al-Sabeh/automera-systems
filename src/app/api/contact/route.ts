@@ -6,14 +6,8 @@ export async function POST(request: NextRequest) {
     const { to, subject, formData } = await request.json();
 
     // Check if required environment variables are set
-    if (
-      !process.env.AWS_ACCESS_KEY_ID ||
-      !process.env.AWS_SECRET_ACCESS_KEY ||
-      !process.env.AWS_REGION
-    ) {
-      console.error(
-        "Missing AWS SES configuration: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, or AWS_REGION not set"
-      );
+    if (!process.env.SES_REGION) {
+      console.error("Missing SES configuration: SES_REGION not set");
       return NextResponse.json(
         {
           success: false,
@@ -24,13 +18,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create SES client
+    // Create SES client with IAM role (no explicit credentials needed)
     const sesClient = new SESClient({
-      region: process.env.AWS_REGION,
-      credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      },
+      region: process.env.SES_REGION || "eu-north-1",
     });
 
     // Email content
@@ -77,11 +67,9 @@ This email was sent from the Automera Systems contact form.
 
     // Prepare email parameters
     const emailParams = {
-      Source: process.env.AWS_SES_FROM_EMAIL || "noreply@automerasystems.com",
+      Source: process.env.SES_FROM_EMAIL || "issa.alsabeh@gmail.com",
       Destination: {
-        ToAddresses: [
-          process.env.AWS_SES_TO_EMAIL || "issa@automerasystems.com",
-        ],
+        ToAddresses: [process.env.SES_TO_EMAIL || "issa@automerasystems.com"],
       },
       Message: {
         Subject: {
@@ -107,10 +95,7 @@ This email was sent from the Automera Systems contact form.
 
     console.log("Email sent successfully:", result.MessageId);
     console.log("Contact form submission received:");
-    console.log(
-      "To:",
-      process.env.AWS_SES_TO_EMAIL || "issa@automerasystems.com"
-    );
+    console.log("To:", process.env.SES_TO_EMAIL || "issa@automerasystems.com");
     console.log("Subject:", subject);
     console.log("Form Data:", formData);
 
