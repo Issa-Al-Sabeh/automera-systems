@@ -81,8 +81,8 @@ export default function Contact() {
       formDataToSend.append("_subject", "New Consultation Request - Automera Systems");
       formDataToSend.append("_replyto", formData.email);
 
-      // Send to Formspree - REPLACE WITH YOUR ACTUAL FORMSPREE ENDPOINT
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      // Send to Formspree
+      const response = await fetch("https://formspree.io/f/mnnbwnkq", {
         method: "POST",
         body: formDataToSend,
         headers: {
