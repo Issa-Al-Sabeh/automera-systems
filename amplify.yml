@@ -5,6 +5,12 @@ frontend:
       commands:
         - echo "Installing dependencies..."
         - npm ci
+        - echo "Environment variables check:"
+        - echo "SES_REGION=$SES_REGION"
+        - echo "SES_FROM_EMAIL=$SES_FROM_EMAIL"
+        - echo "SES_TO_EMAIL=$SES_TO_EMAIL"
+        - echo "SES_ACCESS_KEY_ID is set: $(if [ -n "$SES_ACCESS_KEY_ID" ]; then echo "YES"; else echo "NO"; fi)"
+        - echo "SES_SECRET_ACCESS_KEY is set: $(if [ -n "$SES_SECRET_ACCESS_KEY" ]; then echo "YES"; else echo "NO"; fi)"
     build:
       commands:
         - echo "Building the app..."
