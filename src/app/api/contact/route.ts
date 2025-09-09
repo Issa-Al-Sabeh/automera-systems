@@ -5,6 +5,14 @@ export async function POST(request: NextRequest) {
   try {
     const { to, subject, formData } = await request.json();
 
+    // Debug logging
+    console.log("Environment variables check:");
+    console.log("SES_REGION:", process.env.SES_REGION);
+    console.log("SES_FROM_EMAIL:", process.env.SES_FROM_EMAIL);
+    console.log("SES_TO_EMAIL:", process.env.SES_TO_EMAIL);
+    console.log("SES_ACCESS_KEY_ID:", process.env.SES_ACCESS_KEY_ID ? "SET" : "NOT SET");
+    console.log("SES_SECRET_ACCESS_KEY:", process.env.SES_SECRET_ACCESS_KEY ? "SET" : "NOT SET");
+
     // Check if required environment variables are set
     if (!process.env.SES_REGION) {
       console.error("Missing SES configuration: SES_REGION not set");
@@ -18,16 +26,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create SES client with credentials (for testing)
+    // Create SES client with credentials
     const sesClient = new SESClient({
       region: process.env.SES_REGION || "eu-north-1",
-      credentials:
-        process.env.SES_ACCESS_KEY_ID && process.env.SES_SECRET_ACCESS_KEY
-          ? {
-              accessKeyId: process.env.SES_ACCESS_KEY_ID,
-              secretAccessKey: process.env.SES_SECRET_ACCESS_KEY,
-            }
-          : undefined, // Will use IAM role if no explicit credentials
+      credentials: {
+        accessKeyId: process.env.SES_ACCESS_KEY_ID || "",
+        secretAccessKey: process.env.SES_SECRET_ACCESS_KEY || "",
+      },
     });
 
     // Email content
@@ -120,6 +125,8 @@ This email was sent from the Automera Systems contact form.
     if (error instanceof Error) {
       if (error.message.includes("CredentialsProviderError")) {
         errorMessage = "AWS credentials not configured. Please check your AWS setup.";
+      } else if (error.message.includes("InvalidClientTokenId")) {
+        errorMessage = "Invalid AWS credentials. Please check your access keys.";
       } else if (error.message.includes("InvalidUserPoolConfiguration")) {
         errorMessage =
           "AWS SES configuration is invalid. Please check your AWS credentials.";
