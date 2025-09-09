@@ -18,9 +18,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create SES client with IAM role (no explicit credentials needed)
+    // Create SES client with credentials (for testing)
     const sesClient = new SESClient({
       region: process.env.SES_REGION || "eu-north-1",
+      credentials:
+        process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
+          ? {
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+            }
+          : undefined, // Will use IAM role if no explicit credentials
     });
 
     // Email content
@@ -111,7 +118,10 @@ This email was sent from the Automera Systems contact form.
     let errorMessage = "Failed to process form submission";
 
     if (error instanceof Error) {
-      if (error.message.includes("InvalidUserPoolConfiguration")) {
+      if (error.message.includes("CredentialsProviderError")) {
+        errorMessage =
+          "AWS credentials not configured. Please check your AWS setup.";
+      } else if (error.message.includes("InvalidUserPoolConfiguration")) {
         errorMessage =
           "AWS SES configuration is invalid. Please check your AWS credentials.";
       } else if (error.message.includes("MessageRejected")) {
